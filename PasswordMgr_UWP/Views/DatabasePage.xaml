@@ -5,12 +5,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:m="using:PasswordMgr_UWP.Models"
+    xmlns:v="using:PasswordMgr_UWP.Views"
     xmlns:cm="using:PasswordMgr_UWP.Core.Models"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
-    Style="{StaticResource PageStyle}"
     x:DefaultBindMode="OneWay"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
         <DataTemplate x:Key="DatabaseTemplate" x:DataType="cm:EncryptedDatabase">
@@ -99,7 +100,7 @@
         <Grid x:Name="treeSpace"
               Margin="{StaticResource MediumRightMargin}"
               Background="{ThemeResource SystemControlAcrylicWindowBrush}"
-              CornerRadius="5">
+              CornerRadius="0,5,5,0">
 
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -158,7 +159,8 @@
         <ScrollViewer x:Name="dataSpace"
                       VerticalScrollBarVisibility="Auto"
                       Grid.Column="1"
-                      Margin="{StaticResource MediumRightMargin}">
+                      Margin="{StaticResource MediumRightMargin}"
+                      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <StackPanel Spacing="10">
                 <TextBlock x:Uid="/UIResources/savedPasswords" FontSize="30"/>
 
@@ -175,11 +177,13 @@
 
                         <TextBox x:Uid="/UIResources/name"
                                  Text="{x:Bind ViewModel.Name}"
-                                 AllowFocusOnInteraction="{x:Bind (x:Boolean)editBtn.IsChecked}"/>
+                                 AllowFocusOnInteraction="{x:Bind (x:Boolean)editBtn.IsChecked}"
+                                 IsReadOnly="{x:Bind (x:Boolean)editBtn.IsChecked, Converter={StaticResource InverseBoolConverter}}"/>
 
                         <TextBox x:Uid="/UIResources/info"
                                  Text="{x:Bind ViewModel.Info}"
-                                 AllowFocusOnInteraction="{x:Bind (x:Boolean)editBtn.IsChecked}"/>
+                                 AllowFocusOnInteraction="{x:Bind (x:Boolean)editBtn.IsChecked}"
+                                 IsReadOnly="{x:Bind (x:Boolean)editBtn.IsChecked, Converter={StaticResource InverseBoolConverter}}"/>
 
                         <PasswordBox Name="password" x:Uid="/UIResources/password"
                                      Password="{x:Bind ViewModel.PlaintextPassword}"

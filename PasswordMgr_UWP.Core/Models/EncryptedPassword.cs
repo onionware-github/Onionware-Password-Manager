@@ -41,9 +41,9 @@ namespace PasswordMgr_UWP.Core.Models
             {
                 //A salt will be generated and added to the password.
                 string salt = GenerationTools.GeneratePassword(new OptionSet(8));
-                password += salt;
+                string saltedPassword = password + salt;
 
-                byte[] encryptedPassword = await AESEncryptions.EncryptStringAsync(password, key, aes.IV);
+                byte[] encryptedPassword = await AESEncryptions.EncryptStringAsync(saltedPassword, key, aes.IV);
                 return new EncryptedPassword(platform, username, encryptedPassword, salt, aes.IV);
             }
         }
