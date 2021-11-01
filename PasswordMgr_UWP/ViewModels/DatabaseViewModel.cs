@@ -10,7 +10,6 @@ using Microsoft.Toolkit.Mvvm.Input;
 using PasswordMgr_UWP.Core.Models;
 using PasswordMgr_UWP.Core.Extensions;
 using Windows.UI.Xaml.Controls;
-using PasswordMgr_UWP.Models;
 using Windows.ApplicationModel.Resources;
 using PasswordMgr_UWP.Dialogs;
 using System.Security.Cryptography;
@@ -72,6 +71,7 @@ namespace PasswordMgr_UWP.ViewModels
         }
 
         #region Properties
+        //Commands for UI Elements
         public AsyncRelayCommand NewDatabaseCommand { get; }
         public AsyncRelayCommand NewPasswordCommand { get; }
         public AsyncRelayCommand DecryptDatabaseCommand { get; }
@@ -96,9 +96,18 @@ namespace PasswordMgr_UWP.ViewModels
                 if (!SetProperty(ref selected, value))
                     return;
 
-                Name = value.Name;
-                Info = value.Info;
-                PlaintextPassword = value.PlaintextPassword;
+                if (value != null)
+                {
+                    Name = value.Name;
+                    Info = value.Info;
+                    PlaintextPassword = value.PlaintextPassword;
+                }
+                else
+                {
+                    Name = null;
+                    Info = null;
+                    PlaintextPassword = null;
+                }
                 OnPropertyChanged(nameof(EditChecked));
             }
         }
@@ -135,7 +144,7 @@ namespace PasswordMgr_UWP.ViewModels
         #endregion
 
         /// <summary>
-        /// Deserializes the EncryptedDatabases and add they to the database collection.
+        /// Deserializes the EncryptedDatabases and add them to the database collection.
         /// </summary>
         private void LoadJsonDataAsync()
         {

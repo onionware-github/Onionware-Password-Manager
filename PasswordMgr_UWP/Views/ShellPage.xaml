@@ -20,11 +20,12 @@
 
     <winui:NavigationView
         x:Name="navigationView"
-        IsBackButtonVisible="Visible"
+        IsBackButtonVisible="Collapsed"
         IsBackEnabled="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
         SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}"
         IsSettingsVisible="False"
         PaneDisplayMode="Top"
+        IsPaneVisible="True"
         Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
         <winui:NavigationView.MenuItems>
             <!--
@@ -33,7 +34,7 @@
             Or to use an IconElement instead of a Symbol see https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/projectTypes/navigationpane.md
             Edit String/en-US/Resources.resw: Add a menu item title for each page
             -->
-            <winui:NavigationViewItem x:Uid="Shell_Database" helpers:NavHelper.NavigateTo="views:DatabasePage" />
+            <winui:NavigationViewItem Margin="20,0,0,0" x:Uid="Shell_Database" helpers:NavHelper.NavigateTo="views:DatabasePage" />
             <winui:NavigationViewItem x:Uid="Shell_Generation" helpers:NavHelper.NavigateTo="views:GenerationPage" />
         </winui:NavigationView.MenuItems>
         <i:Interaction.Behaviors>
@@ -41,8 +42,8 @@
                 <ic:InvokeCommandAction Command="{x:Bind ViewModel.ItemInvokedCommand}" />
             </ic:EventTriggerBehavior>
         </i:Interaction.Behaviors>
-        <Grid>
-            <Frame x:Name="shellFrame" />
-        </Grid>
+        
+        <Frame x:Name="shellFrame"/>
+        
     </winui:NavigationView>
 </Page>

@@ -52,6 +52,7 @@ namespace PasswordMgr_UWP.Models
         {
             if (value is bool boolean)
                 return !boolean;
+
             throw new ArgumentException("Input is not a bool.", nameof(value));
         }
 

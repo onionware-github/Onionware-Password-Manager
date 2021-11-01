@@ -76,6 +76,9 @@ namespace PasswordMgr_UWP.Core.Models
             if (IsDecrypted)
                 return;
 
+            //Throws an exception when the masterpassword is false.
+            await AESEncryptions.DecryptStringAsync(Password, password + Salt, IV);
+
             //Decrypt all contained items with the given masterpassword
             foreach (var p in Passwords)
                 await p.Decrypt(password);

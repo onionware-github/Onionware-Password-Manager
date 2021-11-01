@@ -7,8 +7,8 @@
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d"
     x:DefaultBindMode="OneWay">
-    <ScrollViewer x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
-        <StackPanel Margin="15,5" Spacing="10">
+    <ScrollViewer x:Name="ContentArea" Margin="20,5">
+        <StackPanel Spacing="10">
             <TextBlock x:Uid="/UIResources/Header" FontSize="30" />
             <TextBlock x:Uid="/UIResources/Subheader" FontSize="20" TextWrapping="Wrap"/>
 
