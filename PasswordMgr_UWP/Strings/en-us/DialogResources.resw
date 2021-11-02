@@ -171,6 +171,24 @@
   <data name="encryptedDatabaseDlgTitle" xml:space="preserve">
     <value>Database was re-encrypted.</value>
   </data>
+  <data name="importDatabase" xml:space="preserve">
+    <value>Import database.</value>
+  </data>
+  <data name="importDatabases" xml:space="preserve">
+    <value>Import databases.</value>
+  </data>
+  <data name="importDatabasesEnd" xml:space="preserve">
+    <value> databases?</value>
+  </data>
+  <data name="importDatabasesStart" xml:space="preserve">
+    <value>Do you want to import </value>
+  </data>
+  <data name="importSingleDatabaseEnd" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="importSingleDatabaseStart" xml:space="preserve">
+    <value>Do you want to import the database </value>
+  </data>
   <data name="masterContent.Text" xml:space="preserve">
     <value>Enter your Masterpassword to decrypt the database and its content.</value>
   </data>
@@ -188,6 +206,9 @@
   </data>
   <data name="masterPassword.PlaceholderText" xml:space="preserve">
     <value>Masterpassword</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>No</value>
   </data>
   <data name="passwordDlg.PrimaryButtonText" xml:space="preserve">
     <value>Add</value>
@@ -216,6 +237,9 @@
   <data name="passwordRepeat.PlaceholderText" xml:space="preserve">
     <value>Password for the platform</value>
   </data>
+  <data name="passwordTooShortContent" xml:space="preserve">
+    <value>The password is too short. It must have at least 8 characters.</value>
+  </data>
   <data name="passwordUsername.Header" xml:space="preserve">
     <value>Username/E-Mail</value>
   </data>
@@ -227,5 +251,8 @@
   </data>
   <data name="wrongPasswordDlgTitle" xml:space="preserve">
     <value>Wrong password.</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
 </root>

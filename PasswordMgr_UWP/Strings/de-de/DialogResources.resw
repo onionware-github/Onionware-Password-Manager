@@ -171,6 +171,24 @@
   <data name="encryptedDatabaseDlgTitle" xml:space="preserve">
     <value>Der Passwortspeicher wurde wieder verschlüsselt.</value>
   </data>
+  <data name="importDatabase" xml:space="preserve">
+    <value>Passwortspeicher importieren.</value>
+  </data>
+  <data name="importDatabases" xml:space="preserve">
+    <value>Passwortspeicher importieren.</value>
+  </data>
+  <data name="importDatabasesEnd" xml:space="preserve">
+    <value> Passwortspeicher importieren?</value>
+  </data>
+  <data name="importDatabasesStart" xml:space="preserve">
+    <value>Möchten Sie </value>
+  </data>
+  <data name="importSingleDatabaseEnd" xml:space="preserve">
+    <value> importieren?</value>
+  </data>
+  <data name="importSingleDatabaseStart" xml:space="preserve">
+    <value>Möchten Sie den Passwortspeicher </value>
+  </data>
   <data name="masterContent.Text" xml:space="preserve">
     <value>Geben Sie das Masterpasswort für diesen Passwortspeicher ein, um ihn zu entschlüsseln.</value>
   </data>
@@ -188,6 +206,9 @@
   </data>
   <data name="masterPassword.PlaceholderText" xml:space="preserve">
     <value>Masterpasswort</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>Nein</value>
   </data>
   <data name="passwordDlg.PrimaryButtonText" xml:space="preserve">
     <value>Hinzufügen</value>
@@ -216,6 +237,9 @@
   <data name="passwordRepeat.PlaceholderText" xml:space="preserve">
     <value>Passwort für die Plattform</value>
   </data>
+  <data name="passwordTooShortContent" xml:space="preserve">
+    <value>Das Passwort ist zu kurz. Es muss mindestens 8 Zeichen besitzen.</value>
+  </data>
   <data name="passwordUsername.Header" xml:space="preserve">
     <value>Nutzername/E-Mail</value>
   </data>
@@ -227,5 +251,8 @@
   </data>
   <data name="wrongPasswordDlgTitle" xml:space="preserve">
     <value>Falsches Passwort.</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Ja</value>
   </data>
 </root>

@@ -173,6 +173,9 @@ namespace PasswordMgr_UWP.Core.Models
         }
         private bool isDecrypted;
 
+        [JsonIgnore]
+        public bool IsDecryptButtonEnabled => !IsDecrypted;
+
         public event EventHandler UIPropertyChangedEventHandler;
         protected void UIPropertyChanged([CallerMemberName] string propertyName = "")
         {

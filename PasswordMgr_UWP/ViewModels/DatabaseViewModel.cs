@@ -3,7 +3,6 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using Newtonsoft.Json;
 using System.Threading.Tasks;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
@@ -15,6 +14,9 @@ using PasswordMgr_UWP.Dialogs;
 using System.Security.Cryptography;
 using Windows.UI.Xaml;
 using Windows.ApplicationModel.DataTransfer;
+using Windows.Storage.Pickers;
+using System.Collections.Generic;
+using Windows.Storage;
 
 namespace PasswordMgr_UWP.ViewModels
 {
@@ -40,6 +42,8 @@ namespace PasswordMgr_UWP.ViewModels
 
                 Selected = null;
             });
+            SaveCommand = new AsyncRelayCommand(async () => InfosChangedBarVisibility = await UpdateInformations());
+            ExportDatabaseCommand = new AsyncRelayCommand(() => ExportDatabase((EncryptedDatabase)Selected));
             SetSelectedCommand = new RelayCommand<object>(item =>
             {
                 switch (((IPasswordInformation)item).PasswordType)
@@ -67,7 +71,7 @@ namespace PasswordMgr_UWP.ViewModels
                 Clipboard.SetContent(data);
             }, content => !string.IsNullOrEmpty(content));
 
-            LoadJsonDataAsync();
+            LoadData();
         }
 
         #region Properties
@@ -76,9 +80,10 @@ namespace PasswordMgr_UWP.ViewModels
         public AsyncRelayCommand NewPasswordCommand { get; }
         public AsyncRelayCommand DecryptDatabaseCommand { get; }
         public AsyncRelayCommand DeleteCommand { get; }
+        public AsyncRelayCommand SaveCommand { get; }
+        public AsyncRelayCommand ExportDatabaseCommand { get; }
         public RelayCommand<object> SetSelectedCommand { get; }
         public RelayCommand<string> CopyCommand { get; }
-        public RelayCommand SaveCommand { get; }
 
         /// <summary>
         /// An ObservableCollection that contains the password databases.
@@ -104,15 +109,22 @@ namespace PasswordMgr_UWP.ViewModels
                 }
                 else
                 {
-                    Name = null;
-                    Info = null;
-                    PlaintextPassword = null;
+                    Name = string.Empty;
+                    Info = string.Empty;
+                    PlaintextPassword = string.Empty;
                 }
+
                 OnPropertyChanged(nameof(EditChecked));
+                OnPropertyChanged(nameof(SelectedIsDatabase));
+                InfosChangedBarVisibility = false;
             }
         }
         private IPasswordInformation selected;
+        public bool SelectedIsDatabase => Selected != null && Selected.PasswordType == PasswordType.Database;
 
+        /// <summary>
+        /// The name of the selected item.
+        /// </summary>
         public string Name
         {
             get => name;
@@ -120,6 +132,9 @@ namespace PasswordMgr_UWP.ViewModels
         }
         private string name;
 
+        /// <summary>
+        /// Infos about the selected item.
+        /// </summary>
         public string Info
         {
             get => info;
@@ -127,6 +142,9 @@ namespace PasswordMgr_UWP.ViewModels
         }
         private string info;
 
+        /// <summary>
+        /// The PlaintextPassword of the selected item.
+        /// </summary>
         public string PlaintextPassword
         {
             get => plaintextPassword;
@@ -134,7 +152,91 @@ namespace PasswordMgr_UWP.ViewModels
         }
         private string plaintextPassword;
 
+        /// <summary>
+        /// Updates the informations about the selected item.
+        /// </summary>
+        /// <returns>"true" if informations are changed, "false" otherwise.</returns>
+        public async Task<bool> UpdateInformations()
+        {
+            if ((Name, Info, PlaintextPassword) == (Selected.Name, Selected.Info, Selected.PlaintextPassword))
+                return false;
+
+            if (PlaintextPassword.Length < 8)
+            {
+                var dlg = new ContentDialog()
+                {
+                    Title = dlgResloader.GetString("passwordTooShort"),
+                    Content = new TextBlock()
+                    {
+                        Text = dlgResloader.GetString("passwordTooShortContent"),
+                        TextWrapping = TextWrapping.Wrap
+                    },
+                    PrimaryButtonText = "OK"
+                };
+                await dlg.ShowAsync();
+                return false;
+            }
+
+            (Selected.Name, Selected.Info) = (Name, Info);
+
+            if (Selected.PlaintextPassword != PlaintextPassword)
+            {
+                if (Selected.PasswordType == PasswordType.Password)
+                {
+                    var database = GetDatabaseFromPassword((EncryptedPassword)Selected);
+                    var newPassword = await EncryptedPassword.CreateAsync(Selected.Name, Selected.Info, PlaintextPassword, database.PlaintextPassword);
+
+                    (Selected.Password, Selected.IV, Selected.Salt) = (newPassword.Password, newPassword.IV, newPassword.Salt);
+
+                    //Decrypt the new password.
+                    await Selected.Decrypt(database.PlaintextPassword);
+                    await UpdateBson(database);
+                    return true;
+                }
+                else
+                {
+                    foreach (var password in ((EncryptedDatabase)Selected).Passwords)
+                    {
+                        var newPassword = await EncryptedPassword.CreateAsync(password.Name, password.Info, password.PlaintextPassword, PlaintextPassword);
+                        password.Password = newPassword.Password;
+                        password.IV = newPassword.IV;
+                        password.Salt = newPassword.Salt;
+                    }
+
+                    var newDB = await EncryptedDatabase.CreateAsync(Name, PlaintextPassword);
+                    Selected.Password = newDB.Password;
+                    Selected.IV = newDB.IV;
+                    Selected.Salt = newDB.Salt;
+                    Selected.PlaintextPassword = PlaintextPassword;
+
+                    await UpdateBson((EncryptedDatabase)Selected);
+                }
+            }
+
+            if (Selected.PasswordType == PasswordType.Database)
+            {
+                await UpdateBson((EncryptedDatabase)Selected);
+            }
+            else
+            {
+                var database = GetDatabaseFromPassword((EncryptedPassword)Selected);
+                await UpdateBson(database);
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Show the InfosChangedInfoBar.
+        /// </summary>
+        public bool InfosChangedBarVisibility
+        {
+            get => infosChangedBarVisibility;
+            set => SetProperty(ref infosChangedBarVisibility, value);
+        }
+        private bool infosChangedBarVisibility;
+
         public bool EditChecked => false;
+
 
         /// <summary>
         /// Checks whether the object has any value.
@@ -143,28 +245,58 @@ namespace PasswordMgr_UWP.ViewModels
         public bool HasValue(object obj) => obj != null;
         #endregion
 
+
         /// <summary>
-        /// Deserializes the EncryptedDatabases and add them to the database collection.
+        /// Deserializes the EncryptedDatabases (.bson) and add them to the database collection.
         /// </summary>
-        private void LoadJsonDataAsync()
+        private void LoadData()
         {
-            string jsonPath = InstallPath + @"\Databases";
-            if (!Directory.Exists(jsonPath))
+            Databases.Clear();
+            string bsonPath = installPath + @"\Databases";
+            if (!Directory.Exists(bsonPath))
             {
-                Directory.CreateDirectory(jsonPath);
-                Debug.WriteLine(jsonPath + " created!");
+                Directory.CreateDirectory(bsonPath);
+                Debug.WriteLine(bsonPath + " created!");
                 return;
             }
 
-            foreach (var file in Directory.GetFiles(jsonPath))
+            //Check for legacy .json data
+            if (Directory.GetFiles(bsonPath).Any(file => file.EndsWith(".json")))
+            {
+                string legacyPath = tempPath + @"\LegacyContent\";
+                if (!Directory.Exists(legacyPath))
+                    Directory.CreateDirectory(legacyPath);
+
+                Parallel.ForEach(Directory.GetFiles(bsonPath).Where(f => f.EndsWith(".json")), file =>
+                {
+                    string filepath = Path.ChangeExtension(file, ".opv");
+                    try
+                    {
+                        var reader = File.OpenText(file);
+                        var writer = File.CreateText(filepath);
+
+                        string bson = BsonSerialization.JsonToBson<EncryptedDatabase>(reader.ReadToEnd());
+                        writer.Write(bson);
+
+                        reader.Close();
+                        writer.Close();
+                        File.Move(file, legacyPath + $"{Path.GetRandomFileName()}.json");
+                    }
+                    catch (Exception e) { Debug.WriteLine(e.Message); }
+                });
+            }
+
+            foreach (var file in Directory.GetFiles(bsonPath).Where(f => f.EndsWith(".opv")))
             {
                 try
                 {
                     using (StreamReader sr = new StreamReader(file))
                     {
                         Debug.WriteLine("Reading file at: " + file);
-                        var encryptedDatabase = (EncryptedDatabase)jsonser.Deserialize(sr, typeof(EncryptedDatabase));
+                        var encryptedDatabase = BsonSerialization.Deserialize<EncryptedDatabase>(sr.ReadToEnd());
+                        if (encryptedDatabase == null) continue;
                         encryptedDatabase.JsonPath = file;
+
                         foreach (var password in encryptedDatabase.Passwords)
                             password.JsonPath = file;
 
@@ -177,15 +309,42 @@ namespace PasswordMgr_UWP.ViewModels
         }
 
         /// <summary>
-        /// Creates a new EncryptedDatabase and generates a .json file.
+        /// Creates a new EncryptedDatabase and generates a .bson file.
         /// </summary>
         /// <param name="name">The name for the database.</param>
         /// <param name="password">The masterpassword for the database.</param>
         /// <param name="description">The description for the database.</param>
-        private async Task AddNewDatabase(string name, string password, string description = "")
+        public async Task AddNewDatabase(string name, string password, string description = "")
         {
             var encryptedDatabase = await EncryptedDatabase.CreateAsync(name, password, description);
-            await GenerateJson(encryptedDatabase);
+            await GenerateBson(encryptedDatabase);
+        }
+
+        public async Task AddExistingDatabase(EncryptedDatabase encryptedDatabase)
+            => await GenerateBson(encryptedDatabase);
+
+        public async Task ExportDatabase(EncryptedDatabase encryptedDatabase)
+        {
+            if (encryptedDatabase == null)
+                throw new ArgumentNullException(nameof(encryptedDatabase));
+
+            if (!File.Exists(encryptedDatabase.JsonPath))
+                throw new FileNotFoundException("The file has not been found.", encryptedDatabase.JsonPath);
+
+            var savePicker = new FileSavePicker();
+            savePicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            savePicker.FileTypeChoices.Add(resLoader.GetString("OpvName"), new List<string>() { ".opv" });
+            savePicker.SuggestedFileName = encryptedDatabase.Name;
+            var file = await savePicker.PickSaveFileAsync();
+            if (file == null) return;
+
+            CachedFileManager.DeferUpdates(file);
+            using (var reader = File.OpenText(encryptedDatabase.JsonPath))
+            {
+                await FileIO.WriteTextAsync(file, await reader.ReadToEndAsync());
+                reader.Close();
+            }
+            await CachedFileManager.CompleteUpdatesAsync(file);
         }
 
         /// <summary>
@@ -194,7 +353,7 @@ namespace PasswordMgr_UWP.ViewModels
         /// <param name="platform">The platform for the account.</param>
         /// <param name="username">The username for the platform.</param>
         /// <param name="password">The password.</param>
-        private async Task AddNewPassword(string platform, string username, string password)
+        public async Task AddNewPassword(string platform, string username, string password)
         {
             if (Selected == null)
                 throw new NullValueException("The selected item is null.");
@@ -209,11 +368,11 @@ namespace PasswordMgr_UWP.ViewModels
 
             ((EncryptedDatabase)Selected).Passwords.Add(encryptedPassword);
             OnPropertyChanged(nameof(Selected));
-            await UpdateJson((EncryptedDatabase)Selected);
+            await UpdateBson((EncryptedDatabase)Selected);
         }
 
         /// <summary>
-        /// Removes an encrypted database and deletes its .json file.
+        /// Removes an encrypted database and deletes its .bson file.
         /// </summary>
         /// <param name="encryptedDatabase">The database to delete.</param>
         public void DeleteDatabase(EncryptedDatabase encryptedDatabase)
@@ -234,6 +393,20 @@ namespace PasswordMgr_UWP.ViewModels
             if (encryptedPassword == null)
                 return;
 
+            var database = GetDatabaseFromPassword(encryptedPassword);
+            database.Passwords.Remove(encryptedPassword);
+            await UpdateBson(database);
+        }
+
+        /// <summary>
+        /// Searches the EncryptedDatabase with the same JsonPath as the EncryptedPassword.
+        /// </summary>
+        /// <returns>The EncryptedDatabase objet with the same JsonPath.</returns>
+        private EncryptedDatabase GetDatabaseFromPassword(EncryptedPassword encryptedPassword)
+        {
+            if (encryptedPassword == null)
+                throw new ArgumentNullException(nameof(encryptedPassword));
+
             EncryptedDatabase database = null;
             try
             {
@@ -251,60 +424,63 @@ namespace PasswordMgr_UWP.ViewModels
             finally
             {
                 if (database == null)
-                    throw new ArgumentException("Password could not be removed.", nameof(encryptedPassword));
-
-                database.Passwords.Remove(encryptedPassword);
-                await UpdateJson(database);
+                    throw new ArgumentException("Database could not be found.", nameof(encryptedPassword));
             }
+            return database;
         }
 
         /// <summary>
         /// Serializes an encrypted database and adds it to the Database collection.
         /// </summary>
-        /// <param name="encryptedDatabase">The database to generate .json for.</param>
-        private async Task GenerateJson(EncryptedDatabase encryptedDatabase)
+        /// <param name="encryptedDatabase">The database to generate .bson for.</param>
+        private async Task GenerateBson(EncryptedDatabase encryptedDatabase)
         {
-            string newPath = InstallPath + $@"\Databases\{encryptedDatabase.Name.TrimToFilename()}.json";
+            string newPath = installPath + $@"\Databases\{encryptedDatabase.Name.TrimToFilename()}.opv";
 
             // When a file with the same name already exists, create a new filename
             for (int i = 2; File.Exists(newPath); i++)
-                newPath = InstallPath + $@"\Databases\{encryptedDatabase.Name.TrimToFilename()}_{i}.json";
+                newPath = installPath + $@"\Databases\{encryptedDatabase.Name.TrimToFilename()}_{i}.opv";
 
-            //Serialize the database to a .json file
-            using (FileStream fs = File.Create(newPath))
-            {
-                using (StreamWriter sw = new StreamWriter(fs))
-                    jsonser.Serialize(sw, encryptedDatabase);
-            }
+            //Serialize the database to a .bson file
+            using (StreamWriter sw = File.CreateText(newPath))
+                await sw.WriteAsync(BsonSerialization.Serialize(encryptedDatabase));
 
             encryptedDatabase.JsonPath = newPath;
             encryptedDatabase.UIPropertyChangedEventHandler += ModelPropertyChanged;
             Databases.Add(encryptedDatabase);
-            await Task.Yield();
         }
 
-        private void ModelPropertyChanged(object sender, EventArgs e)
+        protected virtual void ModelPropertyChanged(object sender, EventArgs e)
         {
             OnPropertyChanged(nameof(Selected));
             if (Selected == null)
                 return;
 
-            Name = Selected.Name;
-            Info = Selected.Info;
-            PlaintextPassword = Selected.PlaintextPassword;
+            if (Selected.IsDecrypted)
+            {
+                Name = Selected.Name;
+                Info = Selected.Info;
+                PlaintextPassword = Selected.PlaintextPassword;
+            }
+            else
+            {
+                Name = string.Empty;
+                Info = string.Empty;
+                PlaintextPassword = string.Empty;
+            }
         }
 
         /// <summary>
-        /// Updates the .json file for an existing database.
+        /// Updates the .bson file for an existing database.
         /// </summary>
         /// <param name="encryptedDatabase">The database to update.</param>
-        private async Task UpdateJson(EncryptedDatabase encryptedDatabase)
+        private async Task UpdateBson(EncryptedDatabase encryptedDatabase)
         {
             if (!File.Exists(encryptedDatabase.JsonPath))
-                await GenerateJson(encryptedDatabase);
+                await GenerateBson(encryptedDatabase);
 
             using (StreamWriter sw = new StreamWriter(encryptedDatabase.JsonPath))
-                jsonser.Serialize(sw, encryptedDatabase);
+                await sw.WriteAsync(BsonSerialization.Serialize(encryptedDatabase));
         }
 
         /// <summary>
@@ -394,8 +570,9 @@ namespace PasswordMgr_UWP.ViewModels
             => await new DeleteDialog(name, passwordType).ShowAsync() == ContentDialogResult.Primary;
 
         //Some private objects in this class...
-        private static readonly string InstallPath = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
-        private static readonly JsonSerializer jsonser = new JsonSerializer();
+        private static readonly string installPath = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
+        private static readonly string tempPath = Windows.Storage.ApplicationData.Current.TemporaryFolder.Path;
+        private static readonly ResourceLoader resLoader = new ResourceLoader();
         private static readonly ResourceLoader dlgResloader = new ResourceLoader("DialogResources");
     }
 }

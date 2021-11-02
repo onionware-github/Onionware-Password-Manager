@@ -8,7 +8,7 @@ namespace PasswordMgr_UWP.Core.Extensions
         public static string TrimToFilename(this string input)
         {
             char[] forbiddenChars = @"<>:/\|?""*".ToCharArray();
-            return string.Concat(input.Trim().Replace(' ', '_').Where(c => !forbiddenChars.Contains(c)));
+            return string.Concat(input.Trim().Where(c => !char.IsWhiteSpace(c)).Where(c => !forbiddenChars.Contains(c)));
         }
 
         public static bool IsNullOrEmpty(this string input)

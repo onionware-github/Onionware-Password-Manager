@@ -9,10 +9,13 @@ namespace PasswordMgr_UWP.Core.Models
         string PlaintextPassword { get; set; }
         string JsonPath { get; set; }
         PasswordType PasswordType { get; }
+
         byte[] Password { get; set; }
         byte[] IV { get; set; }
         string Salt { get; set; }
+
         bool IsDecrypted { get; set; }
+        bool IsDecryptButtonEnabled { get; }
         void Encrypt();
         Task Decrypt(string password);
     }

@@ -5,10 +5,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:m="using:PasswordMgr_UWP.Models"
-    xmlns:v="using:PasswordMgr_UWP.Views"
     xmlns:cm="using:PasswordMgr_UWP.Core.Models"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core" xmlns:controls="using:Microsoft.UI.Xaml.Controls"
     x:DefaultBindMode="OneWay"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -40,6 +39,7 @@
         <m:BoolToPasswordRevealModeConverter x:Key="BoolToPasswordRevealModeConverter"/>
         <m:InverseBoolConverter x:Key="InverseBoolConverter"/>
         <m:CheckForValueConverter x:Key="CheckForValueConverter"/>
+        <m:CheckForDecryptedDatabaseConverter x:Key="CheckForDecryptedDatabaseConverter"/>
     </Page.Resources>
 
     <Grid x:Name="ContentArea">
@@ -58,7 +58,7 @@
             <VisualStateGroup x:Name="managerPageVisualGroup">
                 <VisualState x:Name="normalWindow">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="810"/>
+                        <AdaptiveTrigger MinWindowWidth="990"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="dataSpace.(Grid.Row)" Value="0"/>
@@ -135,22 +135,28 @@
 
                     <Button Style="{ThemeResource AccentButtonStyle}"
                             Command="{x:Bind ViewModel.NewPasswordCommand}"
-                            IsEnabled="{x:Bind ViewModel.Selected.IsDecrypted, FallbackValue=false}"
+                            IsEnabled="{x:Bind ViewModel.Selected, Converter={StaticResource CheckForDecryptedDatabaseConverter}, FallbackValue=false}"
                             x:Uid="/UIResources/newPasswordBtn">
                         <SymbolIcon Symbol="Permissions"/>
+                    </Button>
+
+                    <Button Style="{ThemeResource AccentButtonStyle}"
+                            Command="{x:Bind ViewModel.DecryptDatabaseCommand}"
+                            IsEnabled="{x:Bind ViewModel.Selected.IsDecryptButtonEnabled, FallbackValue=false}"
+                            x:Uid="/UIResources/decryptBtn">
+                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE785;"/>
+                    </Button>
+
+                    <Button Command="{x:Bind ViewModel.ExportDatabaseCommand}"
+                            IsEnabled="{x:Bind ViewModel.SelectedIsDatabase}"
+                            x:Uid="/UIResources/exportDatabase">
+                        <SymbolIcon Symbol="SaveLocal"/>
                     </Button>
 
                     <Button Command="{x:Bind ViewModel.DeleteCommand}"
                             IsEnabled="{x:Bind ViewModel.Selected, Converter={StaticResource CheckForValueConverter}}"
                             x:Uid="/UIResources/deleteBtn">
                         <SymbolIcon Symbol="Delete"/>
-                    </Button>
-
-                    <Button Style="{ThemeResource AccentButtonStyle}"
-                            Command="{x:Bind ViewModel.DecryptDatabaseCommand}"
-                            IsEnabled="{x:Bind ViewModel.Selected.IsDecrypted, Converter={StaticResource InverseBoolConverter}, FallbackValue=false}"
-                            x:Uid="/UIResources/decryptBtn">
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE785;"/>
                     </Button>
                 </StackPanel>
             </Frame>
@@ -176,17 +182,17 @@
                             Background="{ThemeResource SystemControlAcrylicElementBrush}">
 
                         <TextBox x:Uid="/UIResources/name"
-                                 Text="{x:Bind ViewModel.Name}"
+                                 Text="{x:Bind ViewModel.Name, Mode=TwoWay}"
                                  AllowFocusOnInteraction="{x:Bind (x:Boolean)editBtn.IsChecked}"
                                  IsReadOnly="{x:Bind (x:Boolean)editBtn.IsChecked, Converter={StaticResource InverseBoolConverter}}"/>
 
                         <TextBox x:Uid="/UIResources/info"
-                                 Text="{x:Bind ViewModel.Info}"
+                                 Text="{x:Bind ViewModel.Info, Mode=TwoWay}"
                                  AllowFocusOnInteraction="{x:Bind (x:Boolean)editBtn.IsChecked}"
                                  IsReadOnly="{x:Bind (x:Boolean)editBtn.IsChecked, Converter={StaticResource InverseBoolConverter}}"/>
 
                         <PasswordBox Name="password" x:Uid="/UIResources/password"
-                                     Password="{x:Bind ViewModel.PlaintextPassword}"
+                                     Password="{x:Bind ViewModel.PlaintextPassword, Mode=TwoWay}"
                                      PasswordRevealMode="{x:Bind showBtn.IsChecked, Converter={StaticResource BoolToPasswordRevealModeConverter}}"
                                      AllowFocusOnInteraction="{x:Bind (x:Boolean)editBtn.IsChecked}"/>
 
@@ -220,21 +226,25 @@
                                         HorizontalAlignment="Right"
                                         Grid.Column="1">
 
-                                <Button Visibility="{x:Bind editBtn.IsChecked}"
-                                        Style="{ThemeResource AccentButtonStyle}">
+                                <Button x:Uid="/UIResources/saveBtn"
+                                        Visibility="{x:Bind editBtn.IsChecked}"
+                                        IsEnabled="{x:Bind ViewModel.Selected.IsDecrypted, FallbackValue=false}"
+                                        Style="{ThemeResource AccentButtonStyle}"
+                                        Command="{x:Bind ViewModel.SaveCommand}">
                                     <SymbolIcon Symbol="Save"/>
                                 </Button>
 
-                                <!--Will be added soon.-->
-                                <ToggleButton x:Name="editBtn" Visibility="Collapsed"
+                                <ToggleButton x:Name="editBtn"
+                                              x:Uid="/UIResources/editBtn"
                                               IsEnabled="{x:Bind ViewModel.Selected.IsDecrypted, FallbackValue=false}"
-                                              IsChecked="{x:Bind ViewModel.EditChecked, FallbackValue=false}">
+                                              IsChecked="{x:Bind ViewModel.EditChecked}">
                                     <SymbolIcon Symbol="Edit"/>
                                 </ToggleButton>
                             </StackPanel>
                         </Grid>
                     </StackPanel>
                 </Frame>
+                <controls:InfoBar x:Uid="/UIResources/infosChangedBar" Severity="Success" IsOpen="{x:Bind ViewModel.InfosChangedBarVisibility}"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

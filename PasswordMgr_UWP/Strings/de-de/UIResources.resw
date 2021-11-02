@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Amount.Header" xml:space="preserve">
-    <value>Anzahl: </value>
+    <value>Anzahl:</value>
   </data>
   <data name="ClearBtn.Content" xml:space="preserve">
     <value>Ausgabe leeren</value>
@@ -138,8 +138,17 @@
   <data name="deleteBtn.ToolTipService.ToolTip" xml:space="preserve">
     <value>Löschen</value>
   </data>
+  <data name="editBtn.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Informationen bearbeiten</value>
+  </data>
+  <data name="exportDatabase.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Passwortspeicher exportieren</value>
+  </data>
+  <data name="exportDatabases.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Alle Passwortspeicher exportieren</value>
+  </data>
   <data name="GenerateBtn.Content" xml:space="preserve">
-    <value>Generieren!</value>
+    <value>Generieren</value>
   </data>
   <data name="Header.Text" xml:space="preserve">
     <value>Passwort Generator</value>
@@ -149,6 +158,9 @@
   </data>
   <data name="info.PlaceholderText" xml:space="preserve">
     <value>Infos über das ausgewählte Objekt.</value>
+  </data>
+  <data name="infosChangedBar.Title" xml:space="preserve">
+    <value>Änderungen wurden gespeichert!</value>
   </data>
   <data name="LowerCase.Content" xml:space="preserve">
     <value>Kleinbuchstaben</value>
@@ -175,13 +187,16 @@
     <value>Passwort</value>
   </data>
   <data name="password.PlaceholderText" xml:space="preserve">
-    <value>Entschlüsseln Sie einen Passwortspeicher, um die enthaltenen Passwörter zu sehen</value>
+    <value>Entschlüsseln Sie einen Passwortspeicher, um die enthaltenen Passwörter zu sehen.</value>
   </data>
   <data name="PasswordLenght.Header" xml:space="preserve">
     <value>Passwortlänge:</value>
   </data>
   <data name="PasswordProperties.Text" xml:space="preserve">
     <value>Passworteigenschaften:</value>
+  </data>
+  <data name="saveBtn.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Änderungen übernehmen</value>
   </data>
   <data name="savedPasswords.Text" xml:space="preserve">
     <value>Gespeicherte Passwörter</value>

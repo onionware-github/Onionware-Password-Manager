@@ -123,5 +123,8 @@ namespace PasswordMgr_UWP.Core.Models
             }
         }
         private bool isDecrypted;
+
+        [JsonIgnore]
+        public bool IsDecryptButtonEnabled => false;
     }
 }

@@ -10,7 +10,7 @@
   <Identity
     Name="11715Onionware.11Pass"
     Publisher="CN=OnionWare"
-    Version="1.1.1.0" />
+    Version="1.2.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="fb9938a3-e999-4167-ad8e-92bbd780b29c" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -38,11 +38,34 @@
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="ms-resource:AppDescription"
         BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png"/>
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png" ShortName="Password Manager">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo"/>
+            <uap:ShowOn Tile="wide310x150Logo"/>
+            <uap:ShowOn Tile="square310x310Logo"/>
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile >
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
 
       <Extensions>
+
+        <uap:Extension Category="windows.fileTypeAssociation">
+
+          <uap:FileTypeAssociation Name="opv">
+
+            <uap:SupportedFileTypes>
+
+              <uap:FileType>.opv</uap:FileType>
+            </uap:SupportedFileTypes>
+
+            <uap:DisplayName>ms-resource:OpvName</uap:DisplayName>
+
+            <uap:Logo>OnionwarePasswordManager.png</uap:Logo>
+
+            <uap:EditFlags OpenIsSafe="true"/>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
       </Extensions>
     </Application>
   </Applications>

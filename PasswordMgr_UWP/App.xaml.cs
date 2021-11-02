@@ -1,9 +1,10 @@
 ﻿using System;
 
 using PasswordMgr_UWP.Services;
-
+using PasswordMgr_UWP.Views;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace PasswordMgr_UWP
 {
@@ -36,6 +37,16 @@ namespace PasswordMgr_UWP
         protected override async void OnActivated(IActivatedEventArgs args)
         {
             await ActivationService.ActivateAsync(args);
+        }
+
+        protected override void OnFileActivated(FileActivatedEventArgs args)
+        {
+            base.OnFileActivated(args);
+
+            var rootFrame = new Frame();
+            rootFrame.Navigate(typeof(ShellPage), args);
+            Window.Current.Content = rootFrame;
+            Window.Current.Activate();
         }
 
         private void OnAppUnhandledException(object sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e)

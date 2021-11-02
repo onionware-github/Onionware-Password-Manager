@@ -1,14 +1,12 @@
-﻿using System;
-
-using PasswordMgr_UWP.ViewModels;
+﻿using PasswordMgr_UWP.ViewModels;
 using Windows.ApplicationModel.Core;
 using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace PasswordMgr_UWP.Views
 {
-    // TODO WTS: Change the icons and titles for all NavigationViewItems in ShellPage.xaml.
     public sealed partial class ShellPage : Page
     {
         public ShellViewModel ViewModel { get; } = new ShellViewModel();
@@ -21,6 +19,12 @@ namespace PasswordMgr_UWP.Views
 
             ApplicationView.GetForCurrentView().TitleBar.ButtonBackgroundColor = Colors.Transparent;
             CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            shellFrame.Navigate(typeof(DatabasePage), e.Parameter);
         }
     }
 }

@@ -169,4 +169,7 @@
     <value>Personalization</value>
     <comment>Personalization text for Settings</comment>
   </data>
+  <data name="OpvName" xml:space="preserve">
+    <value>Onionware Passwortspeicher</value>
+  </data>
 </root>
