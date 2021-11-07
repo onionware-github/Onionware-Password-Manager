@@ -130,7 +130,7 @@
     <value>Passwort kopieren</value>
   </data>
   <data name="databases.Text" xml:space="preserve">
-    <value>Passwortspeicher</value>
+    <value>Passwortdatenbanken</value>
   </data>
   <data name="decryptBtn.ToolTipService.ToolTip" xml:space="preserve">
     <value>Entschlüsseln</value>
@@ -142,10 +142,10 @@
     <value>Informationen bearbeiten</value>
   </data>
   <data name="exportDatabase.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Passwortspeicher exportieren</value>
+    <value>Passwortdatenbank exportieren</value>
   </data>
   <data name="exportDatabases.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Alle Passwortspeicher exportieren</value>
+    <value>Alle Passwortdatenbanken exportieren</value>
   </data>
   <data name="GenerateBtn.Content" xml:space="preserve">
     <value>Generieren</value>
@@ -172,7 +172,7 @@
     <value>Name des ausgewählten Objekts.</value>
   </data>
   <data name="newDatabaseBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Neuer Passwortspeicher</value>
+    <value>Neue Passwortdatenbank</value>
   </data>
   <data name="newPasswordBtn.ToolTipService.ToolTip" xml:space="preserve">
     <value>Neues Passwort</value>
@@ -187,7 +187,7 @@
     <value>Passwort</value>
   </data>
   <data name="password.PlaceholderText" xml:space="preserve">
-    <value>Entschlüsseln Sie einen Passwortspeicher, um die enthaltenen Passwörter zu sehen.</value>
+    <value>Entschlüsseln Sie eine Passwortdatenbank, um die enthaltenen Passwörter zu sehen.</value>
   </data>
   <data name="PasswordLenght.Header" xml:space="preserve">
     <value>Passwortlänge:</value>
@@ -199,7 +199,7 @@
     <value>Änderungen übernehmen</value>
   </data>
   <data name="savedPasswords.Text" xml:space="preserve">
-    <value>Gespeicherte Passwörter</value>
+    <value>Passwortdatenbanken und Passwörter</value>
   </data>
   <data name="showBtn.ToolTipService.ToolTip" xml:space="preserve">
     <value>Passwort anzeigen</value>

@@ -73,5 +73,8 @@ namespace PasswordMgr_UWP.Views
                 await ViewModel.AddExistingDatabase(database);
         }
         private static readonly ResourceLoader resLoader = new ResourceLoader("DialogResources");
+
+        private void Page_SizeChanged(object sender, Windows.UI.Xaml.SizeChangedEventArgs e)
+            => Debug.WriteLine($"{e.NewSize.Width} x {e.NewSize.Height}");
     }
 }

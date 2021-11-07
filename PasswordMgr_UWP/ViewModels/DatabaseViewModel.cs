@@ -2,21 +2,23 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+using System.Collections.Generic;
+using System.Collections.Specialized;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using PasswordMgr_UWP.Core.Models;
 using PasswordMgr_UWP.Core.Extensions;
-using Windows.UI.Xaml.Controls;
-using Windows.ApplicationModel.Resources;
 using PasswordMgr_UWP.Dialogs;
-using System.Security.Cryptography;
-using Windows.UI.Xaml;
 using Windows.ApplicationModel.DataTransfer;
-using Windows.Storage.Pickers;
-using System.Collections.Generic;
+using Windows.ApplicationModel.Resources;
 using Windows.Storage;
+using Windows.Storage.Pickers;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace PasswordMgr_UWP.ViewModels
 {
@@ -25,6 +27,7 @@ namespace PasswordMgr_UWP.ViewModels
         public DatabaseViewModel()
         {
             Databases = new ObservableCollection<EncryptedDatabase>();
+            Databases.CollectionChanged += DatabaseCollectionChanged;
             NewDatabaseCommand = new AsyncRelayCommand(() => ShowDatabaseDialogAsync());
             NewPasswordCommand = new AsyncRelayCommand(() => ShowPasswordDialogAsync());
             DecryptDatabaseCommand = new AsyncRelayCommand(() => ShowMasterPasswordDialog());
@@ -44,6 +47,7 @@ namespace PasswordMgr_UWP.ViewModels
             });
             SaveCommand = new AsyncRelayCommand(async () => InfosChangedBarVisibility = await UpdateInformations());
             ExportDatabaseCommand = new AsyncRelayCommand(() => ExportDatabase((EncryptedDatabase)Selected));
+            ExportAllDatabasesCommand = new AsyncRelayCommand(() => ExportAllDatabases());
             SetSelectedCommand = new RelayCommand<object>(item =>
             {
                 switch (((IPasswordInformation)item).PasswordType)
@@ -74,6 +78,8 @@ namespace PasswordMgr_UWP.ViewModels
             LoadData();
         }
 
+        private void DatabaseCollectionChanged(object sender, NotifyCollectionChangedEventArgs e) => OnPropertyChanged(nameof(ListIsNotEmpty));
+
         #region Properties
         //Commands for UI Elements
         public AsyncRelayCommand NewDatabaseCommand { get; }
@@ -82,6 +88,7 @@ namespace PasswordMgr_UWP.ViewModels
         public AsyncRelayCommand DeleteCommand { get; }
         public AsyncRelayCommand SaveCommand { get; }
         public AsyncRelayCommand ExportDatabaseCommand { get; }
+        public AsyncRelayCommand ExportAllDatabasesCommand { get; }
         public RelayCommand<object> SetSelectedCommand { get; }
         public RelayCommand<string> CopyCommand { get; }
 
@@ -89,6 +96,7 @@ namespace PasswordMgr_UWP.ViewModels
         /// An ObservableCollection that contains the password databases.
         /// </summary>
         public ObservableCollection<EncryptedDatabase> Databases { get; set; }
+        public bool ListIsNotEmpty => Databases.Any();
 
         /// <summary>
         /// The selected item from the TreeView.
@@ -189,7 +197,7 @@ namespace PasswordMgr_UWP.ViewModels
                     (Selected.Password, Selected.IV, Selected.Salt) = (newPassword.Password, newPassword.IV, newPassword.Salt);
 
                     //Decrypt the new password.
-                    await Selected.Decrypt(database.PlaintextPassword);
+                    await Selected.DecryptAsync(database.PlaintextPassword);
                     await UpdateBson(database);
                     return true;
                 }
@@ -318,11 +326,20 @@ namespace PasswordMgr_UWP.ViewModels
         {
             var encryptedDatabase = await EncryptedDatabase.CreateAsync(name, password, description);
             await GenerateBson(encryptedDatabase);
+            await Databases.Last().DecryptAsync(password);
         }
 
+        /// <summary>
+        /// Adds an existing database and generates a .bson file for it.
+        /// </summary>
+        /// <param name="encryptedDatabase">The database to add.</param>
         public async Task AddExistingDatabase(EncryptedDatabase encryptedDatabase)
             => await GenerateBson(encryptedDatabase);
 
+        /// <summary>
+        /// Export a password database as an .opv file.
+        /// </summary>
+        /// <param name="encryptedDatabase">The database to export.</param>
         public async Task ExportDatabase(EncryptedDatabase encryptedDatabase)
         {
             if (encryptedDatabase == null)
@@ -344,6 +361,28 @@ namespace PasswordMgr_UWP.ViewModels
                 await FileIO.WriteTextAsync(file, await reader.ReadToEndAsync());
                 reader.Close();
             }
+            await CachedFileManager.CompleteUpdatesAsync(file);
+        }
+
+        /// <summary>
+        /// Exports all password database.
+        /// </summary>
+        public async Task ExportAllDatabases()
+        {
+            var directoryInfo = Directory.CreateDirectory(tempPath + $@"\{Path.GetRandomFileName()}");
+            string zipPath = directoryInfo.ToString() + @"\Databases.zip";
+            ZipFile.CreateFromDirectory(dataPath, zipPath);
+
+            var zipFile = await StorageFile.GetFileFromPathAsync(zipPath);
+            var savePicker = new FileSavePicker();
+            savePicker.SuggestedFileName = resLoader.GetString("databases");
+            savePicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            savePicker.FileTypeChoices.Add(resLoader.GetString("zipArchive"), new List<string>() { ".zip" });
+            var file = await savePicker.PickSaveFileAsync();
+            if (file == null) return;
+
+            CachedFileManager.DeferUpdates(file);
+            await zipFile.MoveAndReplaceAsync(file);
             await CachedFileManager.CompleteUpdatesAsync(file);
         }
 
@@ -450,26 +489,7 @@ namespace PasswordMgr_UWP.ViewModels
             Databases.Add(encryptedDatabase);
         }
 
-        protected virtual void ModelPropertyChanged(object sender, EventArgs e)
-        {
-            OnPropertyChanged(nameof(Selected));
-            if (Selected == null)
-                return;
-
-            if (Selected.IsDecrypted)
-            {
-                Name = Selected.Name;
-                Info = Selected.Info;
-                PlaintextPassword = Selected.PlaintextPassword;
-            }
-            else
-            {
-                Name = string.Empty;
-                Info = string.Empty;
-                PlaintextPassword = string.Empty;
-            }
-        }
-
+        
         /// <summary>
         /// Updates the .bson file for an existing database.
         /// </summary>
@@ -513,7 +533,7 @@ namespace PasswordMgr_UWP.ViewModels
                 //If the database is decrypted in the moment, also decrypt the new password
                 if (Selected.IsDecrypted || !Selected.PlaintextPassword.IsNullOrEmpty())
                 {
-                    await ((EncryptedDatabase)Selected).Passwords.Last().Decrypt(Selected.PlaintextPassword);
+                    await ((EncryptedDatabase)Selected).Passwords.Last().DecryptAsync(Selected.PlaintextPassword);
                 }
             }
             catch (NullValueException e) { Debug.WriteLine(e.Message); }
@@ -545,7 +565,7 @@ namespace PasswordMgr_UWP.ViewModels
 
             try
             {
-                await ((EncryptedDatabase)Selected).Decrypt(dlg.Masterpassword);
+                await ((EncryptedDatabase)Selected).DecryptAsync(dlg.Masterpassword);
             }
             catch (CryptographicException)
             {
@@ -569,10 +589,32 @@ namespace PasswordMgr_UWP.ViewModels
         public async Task<bool> ShowDeleteDialogAsync(string name, PasswordType passwordType)
             => await new DeleteDialog(name, passwordType).ShowAsync() == ContentDialogResult.Primary;
 
-        //Some private objects in this class...
-        private static readonly string installPath = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
-        private static readonly string tempPath = Windows.Storage.ApplicationData.Current.TemporaryFolder.Path;
+        //Some private objects from this class...
+        private static readonly string installPath = ApplicationData.Current.LocalFolder.Path;
+        private static readonly string dataPath = installPath + @"\Databases";
+        private static readonly string tempPath = ApplicationData.Current.TemporaryFolder.Path;
         private static readonly ResourceLoader resLoader = new ResourceLoader();
         private static readonly ResourceLoader dlgResloader = new ResourceLoader("DialogResources");
+
+        protected virtual void ModelPropertyChanged(object sender, EventArgs e)
+        {
+            OnPropertyChanged(nameof(Selected));
+            OnPropertyChanged(nameof(Databases));
+            if (Selected == null)
+                return;
+
+            if (Selected.IsDecrypted)
+            {
+                Name = Selected.Name;
+                Info = Selected.Info;
+                PlaintextPassword = Selected.PlaintextPassword;
+            }
+            else
+            {
+                Name = string.Empty;
+                Info = string.Empty;
+                PlaintextPassword = string.Empty;
+            }
+        }
     }
 }

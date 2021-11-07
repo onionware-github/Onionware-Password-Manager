@@ -9,13 +9,10 @@ namespace PasswordMgr_UWP.Models
 {
     public class DatabaseItemTemplateSelector : DataTemplateSelector
     {
-        public DataTemplate FolderTemplate { get; set; }
-        public DataTemplate FileTemplate { get; set; }
+        public DataTemplate DatabaseTemplate { get; set; }
+        public DataTemplate PasswordTemplate { get; set; }
 
         protected override DataTemplate SelectTemplateCore(object item)
-        {
-            var passwordItem = (IPasswordInformation)item;
-            return passwordItem.PasswordType == PasswordType.Database ? FolderTemplate : FileTemplate;
-        }
+            => ((IPasswordInformation)item).PasswordType == PasswordType.Database ? DatabaseTemplate : PasswordTemplate;
     }
 }

@@ -70,7 +70,7 @@ namespace PasswordMgr_UWP.Core.Models
         /// Decrypts the database.
         /// </summary>
         /// <param name="password">The masterpassword for the database.</param>
-        public async Task Decrypt(string password)
+        public async Task DecryptAsync(string password)
         {
             //Return if the database is already decrypted
             if (IsDecrypted)
@@ -81,7 +81,7 @@ namespace PasswordMgr_UWP.Core.Models
 
             //Decrypt all contained items with the given masterpassword
             foreach (var p in Passwords)
-                await p.Decrypt(password);
+                await p.DecryptAsync(password);
 
             PlaintextPassword = password;
             IsDecrypted = true;
@@ -152,26 +152,29 @@ namespace PasswordMgr_UWP.Core.Models
             get => isDecrypted;
             set
             {
-                if (isDecrypted != value)
+                if (isDecrypted == value) return;
+
+                if (PlaintextPassword.IsNullOrEmpty())
                 {
-                    if (PlaintextPassword.IsNullOrEmpty())
+                    if (isDecrypted)
                     {
-                        if (isDecrypted)
-                        {
-                            isDecrypted = false;
-                            UIPropertyChanged();
-                        }
-                    }
-                    else
-                    {
-                        isDecrypted = value;
+                        isDecrypted = false;
+                        OnPropertyChanged(nameof(IsEncrypted));
                         UIPropertyChanged();
                     }
-                    Debug.WriteLine("IsDecrypted property set to " + isDecrypted);
                 }
+                else
+                {
+                    isDecrypted = value;
+                    OnPropertyChanged(nameof(IsEncrypted));
+                    UIPropertyChanged();
+                }
+                Debug.WriteLine("IsDecrypted property set to " + isDecrypted);
             }
         }
         private bool isDecrypted;
+        [JsonIgnore]
+        public bool IsEncrypted => !IsDecrypted;
 
         [JsonIgnore]
         public bool IsDecryptButtonEnabled => !IsDecrypted;

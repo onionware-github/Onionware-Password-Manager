@@ -54,7 +54,7 @@ namespace PasswordMgr_UWP.Core.Models
             PlaintextPassword = null;
         }
 
-        public async Task Decrypt(string masterpassword)
+        public async Task DecryptAsync(string masterpassword)
         {
             string plaintextPassword = await AESEncryptions.DecryptStringAsync(Password, masterpassword, IV);
             if (!Salt.IsNullOrEmpty())
@@ -112,14 +112,12 @@ namespace PasswordMgr_UWP.Core.Models
             get => isDecrypted;
             set
             {
-                if (isDecrypted != value)
-                {
-                    if (PlaintextPassword.IsNullOrEmpty())
-                        isDecrypted = false;
-                    else
-                        isDecrypted = value;
-                    OnPropertyChanged();
-                }
+                if (isDecrypted == value) return;
+                if (PlaintextPassword.IsNullOrEmpty())
+                    isDecrypted = false;
+                else
+                    isDecrypted = value;
+                OnPropertyChanged();
             }
         }
         private bool isDecrypted;

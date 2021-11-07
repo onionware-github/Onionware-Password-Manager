@@ -17,7 +17,7 @@ namespace PasswordMgr_UWP.Core.Models
         bool IsDecrypted { get; set; }
         bool IsDecryptButtonEnabled { get; }
         void Encrypt();
-        Task Decrypt(string password);
+        Task DecryptAsync(string password);
     }
 
     public enum PasswordType

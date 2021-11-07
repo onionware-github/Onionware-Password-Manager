@@ -121,7 +121,7 @@
     <value>Beschreibung (optional)</value>
   </data>
   <data name="databaseDescription.PlaceholderText" xml:space="preserve">
-    <value>Beschreibung für den Speicher</value>
+    <value>Beschreibung für die Passwortdatenbank</value>
   </data>
   <data name="databaseDlg.PrimaryButtonText" xml:space="preserve">
     <value>Hinzufügen</value>
@@ -130,25 +130,25 @@
     <value>Abbrechen</value>
   </data>
   <data name="databaseDlg.Title" xml:space="preserve">
-    <value>Passwortspeicher hinzufügen</value>
+    <value>Passwortdatenbank hinzufügen</value>
   </data>
   <data name="databaseName.Header" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="databaseName.PlaceholderText" xml:space="preserve">
-    <value>Name für den Passwortspeicher</value>
+    <value>Name für die Passwortdatenbank</value>
   </data>
   <data name="databasePassword.Header" xml:space="preserve">
-    <value>Passwort (min. 8 Stellen)</value>
+    <value>Masterpasswort für diese Datenbank (min. 8 Stellen)</value>
   </data>
   <data name="databasePassword.PlaceholderText" xml:space="preserve">
-    <value>Passwort für den Passwortspeicher</value>
+    <value>Masterpasswort für die Passwortdatenbank</value>
   </data>
   <data name="databaseRepeat.Header" xml:space="preserve">
-    <value>Passwort wiederholen</value>
+    <value>Masterpasswort wiederholen</value>
   </data>
   <data name="databaseRepeat.PlaceholderText" xml:space="preserve">
-    <value>Passwort für den Passwortspeicher</value>
+    <value>Masterpasswort für die Passwortdatenbank</value>
   </data>
   <data name="delete.PrimaryButtonText" xml:space="preserve">
     <value>Löschen</value>
@@ -157,7 +157,7 @@
     <value>Abbrechen</value>
   </data>
   <data name="deleteDatabaseStart" xml:space="preserve">
-    <value>Der Passwortspeicher </value>
+    <value>Die Passwortdatenbank </value>
   </data>
   <data name="deleteEnd" xml:space="preserve">
     <value> wird gelöscht.</value>
@@ -166,19 +166,19 @@
     <value>Das Passwort </value>
   </data>
   <data name="encryptedDatabaseDlgText" xml:space="preserve">
-    <value>Passwortspeicher werden fünf Minuten nach der Entschlüsselung wieder verschlüsselt. Bitte entschlüsseln Sie den Speicher und versuchen Sie es erneut.</value>
+    <value>Passwortdatenbanken werden fünf Minuten nach der Entschlüsselung wieder verschlüsselt. Bitte entschlüsseln Sie die Datenbank und versuchen Sie es erneut.</value>
   </data>
   <data name="encryptedDatabaseDlgTitle" xml:space="preserve">
-    <value>Der Passwortspeicher wurde wieder verschlüsselt.</value>
+    <value>Die Passwortdatenbank wurde wieder verschlüsselt.</value>
   </data>
   <data name="importDatabase" xml:space="preserve">
-    <value>Passwortspeicher importieren.</value>
+    <value>Passwortdatenbank importieren.</value>
   </data>
   <data name="importDatabases" xml:space="preserve">
-    <value>Passwortspeicher importieren.</value>
+    <value>Passwortdatenbank importieren.</value>
   </data>
   <data name="importDatabasesEnd" xml:space="preserve">
-    <value> Passwortspeicher importieren?</value>
+    <value> Passwortdatenbank importieren?</value>
   </data>
   <data name="importDatabasesStart" xml:space="preserve">
     <value>Möchten Sie </value>
@@ -190,7 +190,7 @@
     <value>Möchten Sie den Passwortspeicher </value>
   </data>
   <data name="masterContent.Text" xml:space="preserve">
-    <value>Geben Sie das Masterpasswort für diesen Passwortspeicher ein, um ihn zu entschlüsseln.</value>
+    <value>Geben Sie das Masterpasswort für diese Datenbank ein, um ihn zu entschlüsseln.</value>
   </data>
   <data name="masterDlg.PrimaryButtonText" xml:space="preserve">
     <value>Entschlüsseln</value>
@@ -199,7 +199,7 @@
     <value>Abbrechen</value>
   </data>
   <data name="masterDlg.Title" xml:space="preserve">
-    <value>Passwortspeicher entschlüsseln</value>
+    <value>Passwortdatenbank entschlüsseln</value>
   </data>
   <data name="masterPassword.Header" xml:space="preserve">
     <value>Masterpasswort:</value>
@@ -247,7 +247,7 @@
     <value>Accountname für die Plattform</value>
   </data>
   <data name="wrongPasswordDlgText" xml:space="preserve">
-    <value>Das eingegebene Passwort ist falsch. Bitte versuchen Sie es erneut.</value>
+    <value>Das eingegebene Masterpasswort ist falsch. Bitte versuchen Sie es erneut.</value>
   </data>
   <data name="wrongPasswordDlgTitle" xml:space="preserve">
     <value>Falsches Passwort.</value>

@@ -9,5 +9,5 @@
     x:Uid="/DialogResources/delete"
     PrimaryButtonStyle="{ThemeResource AccentButtonStyle}"
     Title="{x:Bind DialogTitle}">
-    <TextBlock Text="{x:Bind Text}"/>
+    <TextBlock Text="{x:Bind Text}" TextWrapping="Wrap"/>
 </ContentDialog>

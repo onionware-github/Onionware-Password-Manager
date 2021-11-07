@@ -7,17 +7,26 @@
     xmlns:m="using:PasswordMgr_UWP.Models"
     xmlns:cm="using:PasswordMgr_UWP.Core.Models"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-    xmlns:core="using:Microsoft.Xaml.Interactions.Core" xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
     x:DefaultBindMode="OneWay"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    SizeChanged="Page_SizeChanged">
 
     <Page.Resources>
+        <m:TreeViewItemInvokedEventArgsToInvokedItemConverter x:Key="TreeViewItemInvokedEventArgsToInvokedItemConverter"/>
+        <m:BoolToPasswordRevealModeConverter x:Key="BoolToPasswordRevealModeConverter"/>
+        <m:InverseBoolConverter x:Key="InverseBoolConverter"/>
+        <m:CheckForValueConverter x:Key="CheckForValueConverter"/>
+        <m:CheckForDecryptedDatabaseConverter x:Key="CheckForDecryptedDatabaseConverter"/>
+
         <DataTemplate x:Key="DatabaseTemplate" x:DataType="cm:EncryptedDatabase">
-            <TreeViewItem IsExpanded="{x:Bind IsDecrypted}" ItemsSource="{x:Bind Passwords}">
-                <StackPanel Orientation="Horizontal" Spacing="10">
-                    <SymbolIcon Symbol="ProtectedDocument"/>
-                    <TextBlock Text="{x:Bind Name}"/>
+            <TreeViewItem x:Name="databaseItem" IsExpanded="{x:Bind IsDecrypted}" ItemsSource="{x:Bind Passwords}">
+                <StackPanel Orientation="Horizontal">
+                    <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE785;" Visibility="{x:Bind IsDecrypted}"/>
+                    <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE72E;" Visibility="{x:Bind IsEncrypted}"/>
+                    <TextBlock Text="{x:Bind Name}" Margin="10,0"/>
                 </StackPanel>
             </TreeViewItem>
         </DataTemplate>
@@ -32,14 +41,8 @@
         </DataTemplate>
 
         <m:DatabaseItemTemplateSelector x:Key="DatabaseItemTemplateSelector"
-                                        FolderTemplate="{StaticResource DatabaseTemplate}"
-                                        FileTemplate="{StaticResource PasswordTemplate}"/>
-
-        <m:TreeViewItemInvokedEventArgsToInvokedItemConverter x:Key="TreeViewItemInvokedEventArgsToInvokedItemConverter"/>
-        <m:BoolToPasswordRevealModeConverter x:Key="BoolToPasswordRevealModeConverter"/>
-        <m:InverseBoolConverter x:Key="InverseBoolConverter"/>
-        <m:CheckForValueConverter x:Key="CheckForValueConverter"/>
-        <m:CheckForDecryptedDatabaseConverter x:Key="CheckForDecryptedDatabaseConverter"/>
+                                        DatabaseTemplate="{StaticResource DatabaseTemplate}"
+                                        PasswordTemplate="{StaticResource PasswordTemplate}"/>
     </Page.Resources>
 
     <Grid x:Name="ContentArea">
@@ -58,7 +61,7 @@
             <VisualStateGroup x:Name="managerPageVisualGroup">
                 <VisualState x:Name="normalWindow">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="990"/>
+                        <AdaptiveTrigger MinWindowWidth="1120"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="dataSpace.(Grid.Row)" Value="0"/>
@@ -107,15 +110,19 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <TreeView ItemsSource="{x:Bind ViewModel.Databases}"
                           ItemTemplateSelector="{StaticResource DatabaseItemTemplateSelector}"
+                          IsDoubleTapEnabled="{x:Bind ViewModel.SelectedIsDatabase}"
                           CanDrag="False"
                           CanDragItems="False"
-                          AllowDrop="False">
+                          CanReorderItems="False">
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="ItemInvoked">
                             <core:InvokeCommandAction Command="{x:Bind ViewModel.SetSelectedCommand}" InputConverter="{StaticResource TreeViewItemInvokedEventArgsToInvokedItemConverter}"/>
+                        </core:EventTriggerBehavior>
+                        <core:EventTriggerBehavior EventName="DoubleTapped">
+                            <core:InvokeCommandAction Command="{x:Bind ViewModel.DecryptDatabaseCommand}"/>
                         </core:EventTriggerBehavior>
                     </interactivity:Interaction.Behaviors>
                 </TreeView>
@@ -124,7 +131,7 @@
             <Frame Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}">
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Center"
-                            Spacing="10"
+                            Spacing="5"
                             Margin="0,10">
                     
                     <Button Style="{ThemeResource AccentButtonStyle}"
@@ -146,6 +153,12 @@
                             x:Uid="/UIResources/decryptBtn">
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE785;"/>
                     </Button>
+                    
+                    <Button Command="{x:Bind ViewModel.DeleteCommand}"
+                            IsEnabled="{x:Bind ViewModel.Selected, Converter={StaticResource CheckForValueConverter}}"
+                            x:Uid="/UIResources/deleteBtn">
+                        <SymbolIcon Symbol="Delete"/>
+                    </Button>
 
                     <Button Command="{x:Bind ViewModel.ExportDatabaseCommand}"
                             IsEnabled="{x:Bind ViewModel.SelectedIsDatabase}"
@@ -153,10 +166,10 @@
                         <SymbolIcon Symbol="SaveLocal"/>
                     </Button>
 
-                    <Button Command="{x:Bind ViewModel.DeleteCommand}"
-                            IsEnabled="{x:Bind ViewModel.Selected, Converter={StaticResource CheckForValueConverter}}"
-                            x:Uid="/UIResources/deleteBtn">
-                        <SymbolIcon Symbol="Delete"/>
+                    <Button Command="{x:Bind ViewModel.ExportAllDatabasesCommand}"
+                            IsEnabled="{x:Bind ViewModel.ListIsNotEmpty}"
+                            x:Uid="/UIResources/exportDatabases">
+                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xEA35;"/>
                     </Button>
                 </StackPanel>
             </Frame>
@@ -167,10 +180,9 @@
                       Grid.Column="1"
                       Margin="{StaticResource MediumRightMargin}"
                       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <StackPanel Spacing="10">
-                <TextBlock x:Uid="/UIResources/savedPasswords" FontSize="30"/>
+            <StackPanel Spacing="15">
+                <TextBlock x:Uid="/UIResources/savedPasswords" FontSize="30" TextWrapping="WrapWholeWords"/>
 
-                <TextBlock Text="Details"/>
                 <Frame CornerRadius="5"
                        BorderThickness="8"
                        BorderBrush="{ThemeResource AppBarItemPointerOverBackgroundThemeBrush}"
@@ -183,12 +195,10 @@
 
                         <TextBox x:Uid="/UIResources/name"
                                  Text="{x:Bind ViewModel.Name, Mode=TwoWay}"
-                                 AllowFocusOnInteraction="{x:Bind (x:Boolean)editBtn.IsChecked}"
                                  IsReadOnly="{x:Bind (x:Boolean)editBtn.IsChecked, Converter={StaticResource InverseBoolConverter}}"/>
 
                         <TextBox x:Uid="/UIResources/info"
                                  Text="{x:Bind ViewModel.Info, Mode=TwoWay}"
-                                 AllowFocusOnInteraction="{x:Bind (x:Boolean)editBtn.IsChecked}"
                                  IsReadOnly="{x:Bind (x:Boolean)editBtn.IsChecked, Converter={StaticResource InverseBoolConverter}}"/>
 
                         <PasswordBox Name="password" x:Uid="/UIResources/password"

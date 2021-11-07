@@ -126,7 +126,7 @@
     <comment>Application description</comment>
   </data>
   <data name="Shell_Database.Content" xml:space="preserve">
-    <value>Passwortspeicher</value>
+    <value>Passwortdatenbanken</value>
     <comment>Navigation view item name for Database</comment>
   </data>
   <data name="Shell_Generation.Content" xml:space="preserve">
@@ -171,5 +171,11 @@
   </data>
   <data name="OpvName" xml:space="preserve">
     <value>Onionware Passwortspeicher</value>
+  </data>
+  <data name="databases" xml:space="preserve">
+    <value>Passwortdatenbanken</value>
+  </data>
+  <data name="zipArchive" xml:space="preserve">
+    <value>ZIP Archiv</value>
   </data>
 </root>
