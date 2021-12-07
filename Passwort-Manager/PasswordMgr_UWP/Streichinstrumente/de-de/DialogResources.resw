@@ -190,7 +190,7 @@
     <value>Möchten Sie den Passwortspeicher </value>
   </data>
   <data name="masterContent.Text" xml:space="preserve">
-    <value>Geben Sie das Masterpasswort für diese Datenbank ein, um ihn zu entschlüsseln.</value>
+    <value>Geben Sie das Masterpasswort für diese Datenbank ein, um sie zu entschlüsseln.</value>
   </data>
   <data name="masterDlg.PrimaryButtonText" xml:space="preserve">
     <value>Entschlüsseln</value>
