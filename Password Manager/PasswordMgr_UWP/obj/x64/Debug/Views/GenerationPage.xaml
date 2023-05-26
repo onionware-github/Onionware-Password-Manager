@@ -1,0 +1,77 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="PasswordMgr_UWP.Views.GenerationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d"
+                              >
+    <ScrollViewer x:ConnectionId='2' x:Name="ContentArea" Margin="20,5">
+        <StackPanel Spacing="10">
+            <TextBlock x:Uid="/UIResources/Header" FontSize="30" />
+            <TextBlock x:Uid="/UIResources/Subheader" FontSize="20" TextWrapping="Wrap"/>
+
+            <TextBlock x:Uid="/UIResources/PasswordProperties" FontSize="17"/>
+            <Frame  CornerRadius="5"
+                    BorderThickness="8"
+                    BorderBrush="{ThemeResource AppBarItemPointerOverBackgroundThemeBrush}"
+                    Background="{ThemeResource SystemControlAcrylicElementBrush}">
+
+                <StackPanel Spacing="2"
+                            Margin="5"
+                            CornerRadius="5"
+                            Background="{ThemeResource SystemControlAcrylicElementBrush}">
+                    <CheckBox x:ConnectionId='10' x:Uid="/UIResources/UpperCase"                                                                            />
+                    <CheckBox x:ConnectionId='11' x:Uid="/UIResources/LowerCase"                                                                            />
+                    <CheckBox x:ConnectionId='12' x:Uid="/UIResources/Numbers"                                                                       />
+                    <CheckBox x:ConnectionId='13' x:Uid="/UIResources/Symbols"                                                                       />
+
+                    <Slider x:ConnectionId='14' Name="lenght"
+                            x:Uid="/UIResources/PasswordLenght"
+                            Minimum="4"
+                            Maximum="256"
+                                                                          />
+
+                    <TextBlock x:ConnectionId='15'                             />
+                </StackPanel>
+            </Frame>
+
+
+            <ComboBox x:ConnectionId='3' Name="amount"
+                      x:Uid="/UIResources/Amount"
+                      SelectedIndex="0">
+                <x:Int32>1</x:Int32>
+                <x:Int32>3</x:Int32>
+                <x:Int32>5</x:Int32>
+                <x:Int32>10</x:Int32>
+                <x:Int32>20</x:Int32>
+                <x:Int32>50</x:Int32>
+                <x:Int32>100</x:Int32>
+            </ComboBox>
+            <Button x:ConnectionId='4' x:Uid="/UIResources/GenerateBtn"
+                    Style="{StaticResource AccentButtonStyle}"
+                                                                              
+                                                                   />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="5">
+                <Button x:ConnectionId='7' x:Uid="/UIResources/ClearBtn"                                                                                                         />
+                <Button x:ConnectionId='8' x:Uid="/UIResources/CopyBtn"                                                                                                        />
+                <ProgressRing x:ConnectionId='9' IsActive="true"                                                          />
+            </StackPanel>
+
+            <ListView x:ConnectionId='5' x:Name="output"
+                      MinHeight="150"
+                      CornerRadius="5"
+                                                             
+                      Background="{ThemeResource SystemControlAcrylicElementBrush}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" TextWrapping="Wrap" FontSize="16" Margin="7"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
+

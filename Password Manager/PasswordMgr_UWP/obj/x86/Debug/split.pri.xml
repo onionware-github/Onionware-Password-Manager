@@ -1,0 +1,1689 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="11715Onionware.11Pass" version="1.0" primary="true">
+		<Qualifiers>
+			<AlternateForm>LIGHTUNPLATED,UNPLATED</AlternateForm>
+			<Language>EN-US</Language>
+			<Scale>200</Scale>
+			<TargetSize>256,16,24,32,48</TargetSize>
+		</Qualifiers>
+		<ResourceMapSubtree name="DialogResources">
+			<NamedResource name="deleteDatabaseStart" uri="ms-resource://11715Onionware.11Pass/DialogResources/deleteDatabaseStart">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The database </Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="deleteEnd" uri="ms-resource://11715Onionware.11Pass/DialogResources/deleteEnd">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value> will be deleted.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="deletePasswordStart" uri="ms-resource://11715Onionware.11Pass/DialogResources/deletePasswordStart">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The password </Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="encryptedDatabaseDlgText" uri="ms-resource://11715Onionware.11Pass/DialogResources/encryptedDatabaseDlgText">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Databases will be re-encrypted five minutes after decryption. Please decrypt the database and try again.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="encryptedDatabaseDlgTitle" uri="ms-resource://11715Onionware.11Pass/DialogResources/encryptedDatabaseDlgTitle">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Database was re-encrypted.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="importDatabase" uri="ms-resource://11715Onionware.11Pass/DialogResources/importDatabase">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Import database.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="importDatabases" uri="ms-resource://11715Onionware.11Pass/DialogResources/importDatabases">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Import databases.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="importDatabasesEnd" uri="ms-resource://11715Onionware.11Pass/DialogResources/importDatabasesEnd">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value> databases?</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="importDatabasesStart" uri="ms-resource://11715Onionware.11Pass/DialogResources/importDatabasesStart">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Do you want to import </Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="importSingleDatabaseEnd" uri="ms-resource://11715Onionware.11Pass/DialogResources/importSingleDatabaseEnd">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>?</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="importSingleDatabaseStart" uri="ms-resource://11715Onionware.11Pass/DialogResources/importSingleDatabaseStart">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Do you want to import the database </Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="no" uri="ms-resource://11715Onionware.11Pass/DialogResources/no">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>No</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="passwordTooShortContent" uri="ms-resource://11715Onionware.11Pass/DialogResources/passwordTooShortContent">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The password is too short. It must have at least 8 characters.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="wrongPasswordDlgText" uri="ms-resource://11715Onionware.11Pass/DialogResources/wrongPasswordDlgText">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The entered masterpassword is wrong. Please try again.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="wrongPasswordDlgTitle" uri="ms-resource://11715Onionware.11Pass/DialogResources/wrongPasswordDlgTitle">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Wrong password.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="yes" uri="ms-resource://11715Onionware.11Pass/DialogResources/yes">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Yes</Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="databaseDescription">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/DialogResources/databaseDescription/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Description (optional)</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/DialogResources/databaseDescription/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Description for the database</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="databaseDlg">
+				<NamedResource name="PrimaryButtonText" uri="ms-resource://11715Onionware.11Pass/DialogResources/databaseDlg/PrimaryButtonText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Add</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SecondaryButtonText" uri="ms-resource://11715Onionware.11Pass/DialogResources/databaseDlg/SecondaryButtonText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Cancel</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Title" uri="ms-resource://11715Onionware.11Pass/DialogResources/databaseDlg/Title">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Add a new password database</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="databaseName">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/DialogResources/databaseName/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Name</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/DialogResources/databaseName/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Name for the database</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="databasePassword">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/DialogResources/databasePassword/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Masterpassword (min. 8 characters)</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/DialogResources/databasePassword/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Masterpassword for the database</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="databaseRepeat">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/DialogResources/databaseRepeat/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Repeat masterpassword</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/DialogResources/databaseRepeat/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Masterpassword for the database</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="delete">
+				<NamedResource name="PrimaryButtonText" uri="ms-resource://11715Onionware.11Pass/DialogResources/delete/PrimaryButtonText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Delete</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SecondaryButtonText" uri="ms-resource://11715Onionware.11Pass/DialogResources/delete/SecondaryButtonText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Cancel</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="masterContent">
+				<NamedResource name="Text" uri="ms-resource://11715Onionware.11Pass/DialogResources/masterContent/Text">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Enter your Masterpassword to decrypt the database and its content.</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="masterDlg">
+				<NamedResource name="PrimaryButtonText" uri="ms-resource://11715Onionware.11Pass/DialogResources/masterDlg/PrimaryButtonText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Decrypt</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SecondaryButtonText" uri="ms-resource://11715Onionware.11Pass/DialogResources/masterDlg/SecondaryButtonText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Cancel</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Title" uri="ms-resource://11715Onionware.11Pass/DialogResources/masterDlg/Title">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Decrypt database</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="masterPassword">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/DialogResources/masterPassword/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Masterpassword:</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/DialogResources/masterPassword/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Masterpassword</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="passwordDlg">
+				<NamedResource name="PrimaryButtonText" uri="ms-resource://11715Onionware.11Pass/DialogResources/passwordDlg/PrimaryButtonText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Add</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SecondaryButtonText" uri="ms-resource://11715Onionware.11Pass/DialogResources/passwordDlg/SecondaryButtonText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Cancel</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Title" uri="ms-resource://11715Onionware.11Pass/DialogResources/passwordDlg/Title">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Add a password</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="passwordPassword">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/DialogResources/passwordPassword/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Password (min. 8 characters)</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/DialogResources/passwordPassword/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Password for the platform</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="passwordPlatform">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/DialogResources/passwordPlatform/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Platform</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/DialogResources/passwordPlatform/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Name of the platform</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="passwordRepeat">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/DialogResources/passwordRepeat/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Repeat password</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/DialogResources/passwordRepeat/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Password for the platform</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="passwordUsername">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/DialogResources/passwordUsername/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Username/E-Mail</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/DialogResources/passwordUsername/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Accountname for the platform</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="EnumResources">
+			<NamedResource name="Average" uri="ms-resource://11715Onionware.11Pass/EnumResources/Average">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Average</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Awesome" uri="ms-resource://11715Onionware.11Pass/EnumResources/Awesome">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Awesome</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Strong" uri="ms-resource://11715Onionware.11Pass/EnumResources/Strong">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Strong</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="VeryStrong" uri="ms-resource://11715Onionware.11Pass/EnumResources/VeryStrong">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Very strong</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="VeryWeak" uri="ms-resource://11715Onionware.11Pass/EnumResources/VeryWeak">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Very weak</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Weak" uri="ms-resource://11715Onionware.11Pass/EnumResources/Weak">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Weak</Value>
+				</Candidate>
+			</NamedResource>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="Files">
+			<NamedResource name="App.xbf" uri="ms-resource://11715Onionware.11Pass/Files/App.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="OnionwarePasswordManager.png" uri="ms-resource://11715Onionware.11Pass/Files/OnionwarePasswordManager.png">
+				<Candidate type="Path">
+					<Value>OnionwarePasswordManager.png</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="PasswordMgr_UWP.xr.xml" uri="ms-resource://11715Onionware.11Pass/Files/PasswordMgr_UWP.xr.xml">
+				<Candidate type="Path">
+					<Value>PasswordMgr_UWP.xr.xml</Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="Assets">
+				<NamedResource name="LargeTile.png" uri="ms-resource://11715Onionware.11Pass/Files/Assets/LargeTile.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\LargeTile.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="LockScreenLogo.png" uri="ms-resource://11715Onionware.11Pass/Files/Assets/LockScreenLogo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\LockScreenLogo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SmallTile.png" uri="ms-resource://11715Onionware.11Pass/Files/Assets/SmallTile.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\SmallTile.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SplashScreen.png" uri="ms-resource://11715Onionware.11Pass/Files/Assets/SplashScreen.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\SplashScreen.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square150x150Logo.png" uri="ms-resource://11715Onionware.11Pass/Files/Assets/Square150x150Logo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Square150x150Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square44x44Logo.png" uri="ms-resource://11715Onionware.11Pass/Files/Assets/Square44x44Logo.png">
+					<Candidate qualifiers="TargetSize-48, AlternateForm-UNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-48, AlternateForm-LIGHTUNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-48" isDefault="true" type="Path">
+						<Value>Assets\Square44x44Logo.targetsize-48.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-32, AlternateForm-UNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-32, AlternateForm-LIGHTUNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-32" isDefault="true" type="Path">
+						<Value>Assets\Square44x44Logo.targetsize-32.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-256, AlternateForm-UNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-256, AlternateForm-LIGHTUNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-256" isDefault="true" type="Path">
+						<Value>Assets\Square44x44Logo.targetsize-256.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-24, AlternateForm-UNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-24, AlternateForm-LIGHTUNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-24" isDefault="true" type="Path">
+						<Value>Assets\Square44x44Logo.targetsize-24.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-16, AlternateForm-UNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-16, AlternateForm-LIGHTUNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-16" isDefault="true" type="Path">
+						<Value>Assets\Square44x44Logo.targetsize-16.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Square44x44Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="StoreLogo.png" uri="ms-resource://11715Onionware.11Pass/Files/Assets/StoreLogo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\StoreLogo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Wide310x150Logo.png" uri="ms-resource://11715Onionware.11Pass/Files/Assets/Wide310x150Logo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Wide310x150Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Dialogs">
+				<NamedResource name="DatabaseDialog.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Dialogs/DatabaseDialog.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="DeleteDialog.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Dialogs/DeleteDialog.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="MasterPasswordDialog.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Dialogs/MasterPasswordDialog.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PasswordDialog.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Dialogs/PasswordDialog.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Microsoft.UI.Xaml">
+				<ResourceMapSubtree name="DensityStyles">
+					<NamedResource name="Compact.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Microsoft.UI.Xaml/DensityStyles/Compact.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Properties">
+				<NamedResource name="Default.rd.xml" uri="ms-resource://11715Onionware.11Pass/Files/Properties/Default.rd.xml">
+					<Candidate type="Path">
+						<Value>Properties\Default.rd.xml</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Styles">
+				<NamedResource name="Page.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Styles/Page.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="TextBlock.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Styles/TextBlock.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="_Colors.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Styles/_Colors.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="_FontSizes.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Styles/_FontSizes.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="_Thickness.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Styles/_Thickness.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="third-party-licences">
+				<NamedResource name="dotnet-licence.txt" uri="ms-resource://11715Onionware.11Pass/Files/third-party-licences/dotnet-licence.txt">
+					<Candidate type="Path">
+						<Value>third-party-licences\dotnet-licence.txt</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="microsoft.ui.xaml-license.txt" uri="ms-resource://11715Onionware.11Pass/Files/third-party-licences/microsoft.ui.xaml-license.txt">
+					<Candidate type="Path">
+						<Value>third-party-licences\microsoft.ui.xaml-license.txt</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="newtonsoft.json-licence.txt" uri="ms-resource://11715Onionware.11Pass/Files/third-party-licences/newtonsoft.json-licence.txt">
+					<Candidate type="Path">
+						<Value>third-party-licences\newtonsoft.json-licence.txt</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="xamlbehaviors-license.txt" uri="ms-resource://11715Onionware.11Pass/Files/third-party-licences/xamlbehaviors-license.txt">
+					<Candidate type="Path">
+						<Value>third-party-licences\xamlbehaviors-license.txt</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Views">
+				<NamedResource name="DatabasePage.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Views/DatabasePage.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="GenerationPage.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Views/GenerationPage.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SettingsPage.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Views/SettingsPage.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ShellPage.xbf" uri="ms-resource://11715Onionware.11Pass/Files/Views/ShellPage.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="WinMetadata">
+				<NamedResource name="Windows.winmd" uri="ms-resource://11715Onionware.11Pass/Files/WinMetadata/Windows.winmd">
+					<Candidate type="Path">
+						<Value>WinMetadata\Windows.winmd</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="FxResources.System.Text.Encodings.Web.SR">
+			<NamedResource name="TextEncoderDoesNotImplementMaxOutputCharsPerInputChar" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Encodings.Web.SR/TextEncoderDoesNotImplementMaxOutputCharsPerInputChar">
+				<Candidate type="String">
+					<Value>TextEncoder does not implement MaxOutputCharsPerInputChar correctly.</Value>
+				</Candidate>
+			</NamedResource>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="FxResources.System.Text.Json.SR">
+			<NamedResource name="ArrayDepthTooLarge" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ArrayDepthTooLarge">
+				<Candidate type="String">
+					<Value>The maximum configured depth of {0} has been exceeded. Cannot read next JSON array.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ArrayModifiedDuringIteration" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ArrayModifiedDuringIteration">
+				<Candidate type="String">
+					<Value>The JSON array was modified during iteration.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="BufferMaximumSizeExceeded" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/BufferMaximumSizeExceeded">
+				<Candidate type="String">
+					<Value>Cannot allocate a buffer of size {0}.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="BufferWriterAdvancedTooFar" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/BufferWriterAdvancedTooFar">
+				<Candidate type="String">
+					<Value>Cannot advance past the end of the buffer, which has a size of {0}.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CallFlushToAvoidDataLoss" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CallFlushToAvoidDataLoss">
+				<Candidate type="String">
+					<Value>The JSON writer needs to be flushed before getting the current state. There are {0} bytes that have not been committed to the output.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotDecodeInvalidBase64" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotDecodeInvalidBase64">
+				<Candidate type="String">
+					<Value>Cannot decode JSON text that is not encoded as valid Base64 to bytes.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotEncodeInvalidUTF16" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotEncodeInvalidUTF16">
+				<Candidate type="String">
+					<Value>Cannot encode invalid UTF-16 text as JSON. Invalid surrogate value: '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotEncodeInvalidUTF8" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotEncodeInvalidUTF8">
+				<Candidate type="String">
+					<Value>Cannot encode invalid UTF-8 text as JSON. Invalid input: '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotPopulateCollection" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotPopulateCollection">
+				<Candidate type="String">
+					<Value>The collection type '{0}' is abstract, an interface, or is read only, and could not be instantiated and populated.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotReadIncompleteUTF16" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotReadIncompleteUTF16">
+				<Candidate type="String">
+					<Value>Cannot read incomplete UTF-16 JSON text as string with missing low surrogate.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotReadInvalidUTF16" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotReadInvalidUTF16">
+				<Candidate type="String">
+					<Value>Cannot read invalid UTF-16 JSON text as string. Invalid surrogate value: '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotSerializeInvalidMember" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotSerializeInvalidMember">
+				<Candidate type="String">
+					<Value>The type '{0}' of property '{1}' on type '{2}' is invalid for serialization or deserialization because it is a pointer type, is a ref struct, or contains generic parameters that have not been replaced by specific types.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotSerializeInvalidType" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotSerializeInvalidType">
+				<Candidate type="String">
+					<Value>The type '{0}' is invalid for serialization or deserialization because it is a pointer type, is a ref struct, or contains generic parameters that have not been replaced by specific types.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotSkip" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotSkip">
+				<Candidate type="String">
+					<Value>Cannot skip tokens on partial JSON. Either get the whole payload and create a Utf8JsonReader instance where isFinalBlock is true or call TrySkip.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotStartObjectArrayAfterPrimitiveOrClose" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotStartObjectArrayAfterPrimitiveOrClose">
+				<Candidate type="String">
+					<Value>Cannot write the start of an object/array after a single JSON value or outside of an existing closed object/array. Current token type is '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotStartObjectArrayWithoutProperty" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotStartObjectArrayWithoutProperty">
+				<Candidate type="String">
+					<Value>Cannot write the start of an object or array without a property name. Current token type is '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotTranscodeInvalidUtf16" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotTranscodeInvalidUtf16">
+				<Candidate type="String">
+					<Value>Cannot transcode invalid UTF-16 string to UTF-8 JSON text.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotTranscodeInvalidUtf8" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotTranscodeInvalidUtf8">
+				<Candidate type="String">
+					<Value>Cannot transcode invalid UTF-8 JSON text to UTF-16 string.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotWriteCommentWithEmbeddedDelimiter" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotWriteCommentWithEmbeddedDelimiter">
+				<Candidate type="String">
+					<Value>Cannot write a comment value which contains the end of comment delimiter.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotWriteEndAfterProperty" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotWriteEndAfterProperty">
+				<Candidate type="String">
+					<Value>'{0}' is invalid following a property name.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotWritePropertyAfterProperty" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotWritePropertyAfterProperty">
+				<Candidate type="String">
+					<Value>Cannot write a JSON property name following another property name. A JSON value is missing.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotWritePropertyWithinArray" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotWritePropertyWithinArray">
+				<Candidate type="String">
+					<Value>Cannot write a JSON property within an array or as the first JSON token. Current token type is '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotWriteValueAfterPrimitiveOrClose" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotWriteValueAfterPrimitiveOrClose">
+				<Candidate type="String">
+					<Value>Cannot write a JSON value after a single JSON value or outside of an existing closed object/array. Current token type is '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotWriteValueWithinObject" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CannotWriteValueWithinObject">
+				<Candidate type="String">
+					<Value>Cannot write a JSON value within an object without a property name. Current token type is '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CommentHandlingMustBeValid" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/CommentHandlingMustBeValid">
+				<Candidate type="String">
+					<Value>The JsonCommentHandling enum must be set to one of the supported values.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ConstructorMaxOf64Parameters" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ConstructorMaxOf64Parameters">
+				<Candidate type="String">
+					<Value>The constructor '{0}' on type '{1}' may not have more than 64 parameters for deserialization.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ConstructorParamIncompleteBinding" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ConstructorParamIncompleteBinding">
+				<Candidate type="String">
+					<Value>Each parameter in constructor '{0}' on type '{1}' must bind to an object property or field on deserialization. Each parameter name must match with a property or field on the object. The match can be case-insensitive.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ConverterCanConvertNullableRedundant" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ConverterCanConvertNullableRedundant">
+				<Candidate type="String">
+					<Value>The converter '{0}' handles type '{1}' but is being asked to convert type '{2}'. Either create a separate converter for type '{2}' or change the converter's 'CanConvert' method to only return 'true' for a single type.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DefaultIgnoreConditionAlreadySpecified" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/DefaultIgnoreConditionAlreadySpecified">
+				<Candidate type="String">
+					<Value>'IgnoreNullValues' and 'DefaultIgnoreCondition' cannot both be set to non-default values.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DefaultIgnoreConditionInvalid" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/DefaultIgnoreConditionInvalid">
+				<Candidate type="String">
+					<Value>The value cannot be 'JsonIgnoreCondition.Always'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DepthTooLarge" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/DepthTooLarge">
+				<Candidate type="String">
+					<Value>CurrentDepth ({0}) is equal to or larger than the maximum allowed depth of {1}. Cannot write the next JSON object or array.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DeserializeDuplicateKey" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/DeserializeDuplicateKey">
+				<Candidate type="String">
+					<Value>An item with the same property name '{0}' has already been added.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DeserializeNoConstructor" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/DeserializeNoConstructor">
+				<Candidate type="String">
+					<Value>Deserialization of types without a parameterless constructor, a singular parameterized constructor, or a parameterized constructor annotated with '{0}' is not supported. Type '{1}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DeserializePolymorphicInterface" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/DeserializePolymorphicInterface">
+				<Candidate type="String">
+					<Value>Deserialization of interface types is not supported. Type '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DeserializeUnableToAssignNull" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/DeserializeUnableToAssignNull">
+				<Candidate type="String">
+					<Value>Unable to assign 'null' to the property or field of type '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DeserializeUnableToAssignValue" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/DeserializeUnableToAssignValue">
+				<Candidate type="String">
+					<Value>Unable to cast object of type '{0}' to type '{1}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DeserializeUnableToConvertValue" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/DeserializeUnableToConvertValue">
+				<Candidate type="String">
+					<Value>The JSON value could not be converted to {0}.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DeserializeWrongType" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/DeserializeWrongType">
+				<Candidate type="String">
+					<Value>The specified type {0} must derive from the specific value's type {1}.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DictionaryKeyTypeNotSupported" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/DictionaryKeyTypeNotSupported">
+				<Candidate type="String">
+					<Value>The type '{0}' is not a supported Dictionary key type.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="EmptyJsonIsInvalid" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/EmptyJsonIsInvalid">
+				<Candidate type="String">
+					<Value>Writing an empty JSON payload (excluding comments) is invalid.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="EmptyStringToInitializeNumber" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/EmptyStringToInitializeNumber">
+				<Candidate type="String">
+					<Value>Expected a number, but instead got empty string.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="EndOfCommentNotFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/EndOfCommentNotFound">
+				<Candidate type="String">
+					<Value>Expected end of comment, but instead reached end of data.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="EndOfStringNotFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/EndOfStringNotFound">
+				<Candidate type="String">
+					<Value>Expected end of string, but instead reached end of data.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedEndAfterSingleJson" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedEndAfterSingleJson">
+				<Candidate type="String">
+					<Value>'{0}' is invalid after a single JSON value. Expected end of data.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedEndOfDigitNotFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedEndOfDigitNotFound">
+				<Candidate type="String">
+					<Value>'{0}' is an invalid end of a number. Expected a delimiter.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedFalse" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedFalse">
+				<Candidate type="String">
+					<Value>'{0}' is an invalid JSON literal. Expected the literal 'false'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedJsonTokens" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedJsonTokens">
+				<Candidate type="String">
+					<Value>The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedNextDigitEValueNotFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedNextDigitEValueNotFound">
+				<Candidate type="String">
+					<Value>'{0}' is an invalid end of a number. Expected 'E' or 'e'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedNull" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedNull">
+				<Candidate type="String">
+					<Value>'{0}' is an invalid JSON literal. Expected the literal 'null'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedOneCompleteToken" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedOneCompleteToken">
+				<Candidate type="String">
+					<Value>The input does not contain any complete JSON tokens. Expected the input to have at least one valid, complete, JSON token.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedSeparatorAfterPropertyNameNotFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedSeparatorAfterPropertyNameNotFound">
+				<Candidate type="String">
+					<Value>'{0}' is invalid after a property name. Expected a ':'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedStartOfPropertyNotFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedStartOfPropertyNotFound">
+				<Candidate type="String">
+					<Value>'{0}' is an invalid start of a property name. Expected a '"'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedStartOfPropertyOrValueAfterComment" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedStartOfPropertyOrValueAfterComment">
+				<Candidate type="String">
+					<Value>'{0}' is an invalid start of a property name or value, after a comment.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedStartOfPropertyOrValueNotFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedStartOfPropertyOrValueNotFound">
+				<Candidate type="String">
+					<Value>Expected start of a property name or value, but instead reached end of data.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedStartOfValueNotFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedStartOfValueNotFound">
+				<Candidate type="String">
+					<Value>'{0}' is an invalid start of a value.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedTrue" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedTrue">
+				<Candidate type="String">
+					<Value>'{0}' is an invalid JSON literal. Expected the literal 'true'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExpectedValueAfterPropertyNameNotFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExpectedValueAfterPropertyNameNotFound">
+				<Candidate type="String">
+					<Value>Expected a value, but instead reached end of data.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ExtensionDataCannotBindToCtorParam" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ExtensionDataCannotBindToCtorParam">
+				<Candidate type="String">
+					<Value>The extension data property '{0}' on type '{1}' cannot bind with a parameter in constructor '{2}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FailedToGetLargerSpan" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FailedToGetLargerSpan">
+				<Candidate type="String">
+					<Value>The 'IBufferWriter' could not provide an output buffer that is large enough to continue writing.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatBoolean" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatBoolean">
+				<Candidate type="String">
+					<Value>The JSON value is not in a supported Boolean format.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatByte" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatByte">
+				<Candidate type="String">
+					<Value>Either the JSON value is not in a supported format, or is out of bounds for an unsigned byte.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatDateTime" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatDateTime">
+				<Candidate type="String">
+					<Value>The JSON value is not in a supported DateTime format.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatDateTimeOffset" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatDateTimeOffset">
+				<Candidate type="String">
+					<Value>The JSON value is not in a supported DateTimeOffset format.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatDecimal" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatDecimal">
+				<Candidate type="String">
+					<Value>The JSON value is either too large or too small for a Decimal.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatDouble" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatDouble">
+				<Candidate type="String">
+					<Value>Either the JSON value is not in a supported format, or is out of bounds for a Double.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatGuid" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatGuid">
+				<Candidate type="String">
+					<Value>The JSON value is not in a supported Guid format.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatInt16" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatInt16">
+				<Candidate type="String">
+					<Value>Either the JSON value is not in a supported format, or is out of bounds for an Int16.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatInt32" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatInt32">
+				<Candidate type="String">
+					<Value>Either the JSON value is not in a supported format, or is out of bounds for an Int32.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatInt64" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatInt64">
+				<Candidate type="String">
+					<Value>Either the JSON value is not in a supported format, or is out of bounds for an Int64.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatSByte" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatSByte">
+				<Candidate type="String">
+					<Value>Either the JSON value is not in a supported format, or is out of bounds for a signed byte.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatSingle" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatSingle">
+				<Candidate type="String">
+					<Value>Either the JSON value is not in a supported format, or is out of bounds for a Single.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatUInt16" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatUInt16">
+				<Candidate type="String">
+					<Value>Either the JSON value is not in a supported format, or is out of bounds for a UInt16.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatUInt32" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatUInt32">
+				<Candidate type="String">
+					<Value>Either the JSON value is not in a supported format, or is out of bounds for a UInt32.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FormatUInt64" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FormatUInt64">
+				<Candidate type="String">
+					<Value>Either the JSON value is not in a supported format, or is out of bounds for a UInt64.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="FoundInvalidCharacter" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/FoundInvalidCharacter">
+				<Candidate type="String">
+					<Value>'{0}' is invalid after a value. Expected either ',', '}}', or ']'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="IgnoreConditionOnValueTypeInvalid" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/IgnoreConditionOnValueTypeInvalid">
+				<Candidate type="String">
+					<Value>The ignore condition 'JsonIgnoreCondition.WhenWritingNull' is not valid on value-type member '{0}' on type '{1}'. Consider using 'JsonIgnoreCondition.WhenWritingDefault'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidCast" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/InvalidCast">
+				<Candidate type="String">
+					<Value>Cannot get the value of a token type '{0}' as a {1}.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidCharacterAfterEscapeWithinString" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/InvalidCharacterAfterEscapeWithinString">
+				<Candidate type="String">
+					<Value>'{0}' is an invalid escapable character within a JSON string. The string should be correctly escaped.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidCharacterAtStartOfComment" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/InvalidCharacterAtStartOfComment">
+				<Candidate type="String">
+					<Value>'{0}' is invalid after '/' at the beginning of the comment. Expected either '/' or '*'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidCharacterWithinString" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/InvalidCharacterWithinString">
+				<Candidate type="String">
+					<Value>'{0}' is invalid within a JSON string. The string should be correctly escaped.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidComparison" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/InvalidComparison">
+				<Candidate type="String">
+					<Value>Cannot compare the value of a token type '{0}' to text.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidDuplicatePropertyNameHandling" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/InvalidDuplicatePropertyNameHandling">
+				<Candidate type="String">
+					<Value>The DuplicatePropertyNameHandling enum must be set to one of the supported values.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidEndOfJsonNonPrimitive" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/InvalidEndOfJsonNonPrimitive">
+				<Candidate type="String">
+					<Value>'{0}' is an invalid token type for the end of the JSON payload. Expected either 'EndArray' or 'EndObject'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidHexCharacterWithinString" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/InvalidHexCharacterWithinString">
+				<Candidate type="String">
+					<Value>'{0}' is not a hex digit following '\u' within a JSON string. The string should be correctly escaped.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidLeadingZeroInNumber" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/InvalidLeadingZeroInNumber">
+				<Candidate type="String">
+					<Value>Invalid leading zero before '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="JsonDocumentDoesNotSupportComments" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/JsonDocumentDoesNotSupportComments">
+				<Candidate type="String">
+					<Value>Comments cannot be stored in a JsonDocument, only the Skip and Disallow comment handling modes are supported.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="JsonElementHasWrongType" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/JsonElementHasWrongType">
+				<Candidate type="String">
+					<Value>The requested operation requires an element of type '{0}', but the target element has type '{1}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="JsonIncludeOnNonPublicInvalid" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/JsonIncludeOnNonPublicInvalid">
+				<Candidate type="String">
+					<Value>The non-public property '{0}' on type '{1}' is annotated with 'JsonIncludeAttribute' which is invalid.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="JsonObjectDuplicateKey" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/JsonObjectDuplicateKey">
+				<Candidate type="String">
+					<Value>Property with name '{0}' already exists.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="JsonSerializerDoesNotSupportComments" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/JsonSerializerDoesNotSupportComments">
+				<Candidate type="String">
+					<Value>Comments cannot be stored when deserializing objects, only the Skip and Disallow comment handling modes are supported.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MaxDepthMustBePositive" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MaxDepthMustBePositive">
+				<Candidate type="String">
+					<Value>Max depth must be positive.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataCannotParsePreservedObjectToImmutable" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataCannotParsePreservedObjectToImmutable">
+				<Candidate type="String">
+					<Value>Cannot parse a JSON object containing metadata properties like '$id' into an array or immutable collection type. Type '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataDuplicateIdFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataDuplicateIdFound">
+				<Candidate type="String">
+					<Value>The value of the '$id' metadata property '{0}' conflicts with an existing identifier.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataIdIsNotFirstProperty" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataIdIsNotFirstProperty">
+				<Candidate type="String">
+					<Value>The metadata property '$id' must be the first property in the JSON object.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataInvalidPropertyWithLeadingDollarSign" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataInvalidPropertyWithLeadingDollarSign">
+				<Candidate type="String">
+					<Value>Properties that start with '$' are not allowed on preserve mode, either escape the character or turn off preserve references by setting ReferenceHandler to null.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataInvalidReferenceToValueType" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataInvalidReferenceToValueType">
+				<Candidate type="String">
+					<Value>Invalid reference to value type '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataInvalidTokenAfterValues" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataInvalidTokenAfterValues">
+				<Candidate type="String">
+					<Value>The '$values' metadata property must be a JSON array. Current token type is '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataPreservedArrayFailed" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataPreservedArrayFailed">
+				<Candidate type="String">
+					<Value>Deserialization failed for one of these reasons:
+1. {0}
+2. {1}</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataPreservedArrayInvalidProperty" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataPreservedArrayInvalidProperty">
+				<Candidate type="String">
+					<Value>Invalid property '{0}' found within a JSON object that must only contain metadata properties and the nested JSON array to be preserved.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataPreservedArrayPropertyNotFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataPreservedArrayPropertyNotFound">
+				<Candidate type="String">
+					<Value>One or more metadata properties, such as '$id' and '$values', were not found within a JSON object that must only contain metadata properties and the nested JSON array to be preserved.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataReferenceCannotContainOtherProperties" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataReferenceCannotContainOtherProperties">
+				<Candidate type="String">
+					<Value>A JSON object that contains a '$ref' metadata property must not contain any other properties.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataReferenceNotFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataReferenceNotFound">
+				<Candidate type="String">
+					<Value>Reference '{0}' not found.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataReferenceOfTypeCannotBeAssignedToType" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataReferenceOfTypeCannotBeAssignedToType">
+				<Candidate type="String">
+					<Value>The object with reference id '{0}' of type '{1}' cannot be assigned to the type '{2}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MetadataValueWasNotString" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MetadataValueWasNotString">
+				<Candidate type="String">
+					<Value>The '$id' and '$ref' metadata properties must be JSON strings. Current token type is '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MismatchedObjectArray" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MismatchedObjectArray">
+				<Candidate type="String">
+					<Value>'{0}' is invalid without a matching open.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MultipleMembersBindWithConstructorParameter" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/MultipleMembersBindWithConstructorParameter">
+				<Candidate type="String">
+					<Value>Members '{0}' and '{1}' on type '{2}' cannot both bind with parameter '{3}' in constructor '{4}' on deserialization.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="NamingPolicyReturnNull" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/NamingPolicyReturnNull">
+				<Candidate type="String">
+					<Value>The naming policy '{0}' cannot return null.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="NotEnoughData" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/NotEnoughData">
+				<Candidate type="String">
+					<Value>There is not enough data to read through the entire JSON array or object.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="NotNodeJsonElementParent" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/NotNodeJsonElementParent">
+				<Candidate type="String">
+					<Value>This JsonElement instance was not built from a JsonNode and is immutable.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="NumberHandlingConverterMustBeBuiltIn" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/NumberHandlingConverterMustBeBuiltIn">
+				<Candidate type="String">
+					<Value>'JsonNumberHandlingAttribute' cannot be placed on a property, field, or type that is handled by a custom converter. See usage(s) of converter '{0}' on type '{1}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="NumberHandlingOnPropertyTypeMustBeNumberOrCollection" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/NumberHandlingOnPropertyTypeMustBeNumberOrCollection">
+				<Candidate type="String">
+					<Value>When 'JsonNumberHandlingAttribute' is placed on a property or field, the property or field must be a number or a collection. See member '{0}' on type '{1}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ObjectDepthTooLarge" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ObjectDepthTooLarge">
+				<Candidate type="String">
+					<Value>The maximum configured depth of {0} has been exceeded. Cannot read next JSON object.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ObjectWithParameterizedCtorRefMetadataNotHonored" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ObjectWithParameterizedCtorRefMetadataNotHonored">
+				<Candidate type="String">
+					<Value>Reference metadata is not honored when deserializing types using parameterized constructors. See type '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="PropertyNameTooLarge" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/PropertyNameTooLarge">
+				<Candidate type="String">
+					<Value>The JSON property name of length {0} is too large and not supported.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="PropertyNotFound" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/PropertyNotFound">
+				<Candidate type="String">
+					<Value>Property with name '{0}' not found.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="PropertyTypeMismatch" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/PropertyTypeMismatch">
+				<Candidate type="String">
+					<Value>Property with name '{0}' has a different type than expected.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="RequiredDigitNotFoundAfterDecimal" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/RequiredDigitNotFoundAfterDecimal">
+				<Candidate type="String">
+					<Value>'{0}' is invalid within a number, immediately after a decimal point ('.'). Expected a digit ('0'-'9').</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="RequiredDigitNotFoundAfterSign" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/RequiredDigitNotFoundAfterSign">
+				<Candidate type="String">
+					<Value>'{0}' is invalid within a number, immediately after a sign character ('+' or '-'). Expected a digit ('0'-'9').</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="RequiredDigitNotFoundEndOfData" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/RequiredDigitNotFoundEndOfData">
+				<Candidate type="String">
+					<Value>Expected a digit ('0'-'9'), but instead reached end of data.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializationConverterNotCompatible" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializationConverterNotCompatible">
+				<Candidate type="String">
+					<Value>The converter '{0}' is not compatible with the type '{1}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializationConverterOnAttributeInvalid" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializationConverterOnAttributeInvalid">
+				<Candidate type="String">
+					<Value>The converter specified on '{0}' does not derive from JsonConverter or have a public parameterless constructor.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializationConverterOnAttributeNotCompatible" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializationConverterOnAttributeNotCompatible">
+				<Candidate type="String">
+					<Value>The converter specified on '{0}' is not compatible with the type '{1}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializationConverterRead" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializationConverterRead">
+				<Candidate type="String">
+					<Value>The converter '{0}' read too much or not enough.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializationConverterWrite" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializationConverterWrite">
+				<Candidate type="String">
+					<Value>The converter '{0}' wrote too much or not enough.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializationDataExtensionPropertyInvalid" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializationDataExtensionPropertyInvalid">
+				<Candidate type="String">
+					<Value>The data extension property '{0}.{1}' does not match the required signature of IDictionary&lt;string, JsonElement&gt; or IDictionary&lt;string, object&gt;.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializationDuplicateAttribute" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializationDuplicateAttribute">
+				<Candidate type="String">
+					<Value>The attribute '{0}' cannot exist more than once on '{1}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializationDuplicateTypeAttribute" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializationDuplicateTypeAttribute">
+				<Candidate type="String">
+					<Value>The type '{0}' cannot have more than one property that has the attribute '{1}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializationInvalidBufferSize" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializationInvalidBufferSize">
+				<Candidate type="String">
+					<Value>The value must be greater than zero.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializationNotSupportedParentType" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializationNotSupportedParentType">
+				<Candidate type="String">
+					<Value>The unsupported member type is located on type '{0}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializationNotSupportedType" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializationNotSupportedType">
+				<Candidate type="String">
+					<Value>The type '{0}' is not supported.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializerConverterFactoryReturnsNull" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializerConverterFactoryReturnsNull">
+				<Candidate type="String">
+					<Value>The converter '{0}' cannot return a null value.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializerCycleDetected" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializerCycleDetected">
+				<Candidate type="String">
+					<Value>A possible object cycle was detected. This can either be due to a cycle or if the object depth is larger than the maximum allowed depth of {0}. Consider using ReferenceHandler.Preserve on JsonSerializerOptions to support cycles.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializerOptionsImmutable" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializerOptionsImmutable">
+				<Candidate type="String">
+					<Value>Serializer options cannot be changed once serialization or deserialization has occurred.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializerPropertyNameConflict" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializerPropertyNameConflict">
+				<Candidate type="String">
+					<Value>The JSON property name for '{0}.{1}' collides with another property.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializerPropertyNameNull" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializerPropertyNameNull">
+				<Candidate type="String">
+					<Value>The JSON property name for '{0}.{1}' cannot be null.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializeTypeInstanceNotSupported" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializeTypeInstanceNotSupported">
+				<Candidate type="String">
+					<Value>Serialization and deserialization of 'System.Type' instances are not supported and should be avoided since they can lead to security issues.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SerializeUnableToSerialize" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SerializeUnableToSerialize">
+				<Candidate type="String">
+					<Value>The object or value could not be serialized.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SpecialNumberValuesNotSupported" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/SpecialNumberValuesNotSupported">
+				<Candidate type="String">
+					<Value>.NET number values such as positive and negative infinity cannot be written as valid JSON.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="StreamNotWritable" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/StreamNotWritable">
+				<Candidate type="String">
+					<Value>Stream is not writable.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="TrailingCommaNotAllowedBeforeArrayEnd" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/TrailingCommaNotAllowedBeforeArrayEnd">
+				<Candidate type="String">
+					<Value>The JSON array contains a trailing comma at the end which is not supported in this mode. Change the reader options.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="TrailingCommaNotAllowedBeforeObjectEnd" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/TrailingCommaNotAllowedBeforeObjectEnd">
+				<Candidate type="String">
+					<Value>The JSON object contains a trailing comma at the end which is not supported in this mode. Change the reader options.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="UnexpectedEndOfDataWhileReadingComment" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/UnexpectedEndOfDataWhileReadingComment">
+				<Candidate type="String">
+					<Value>Unexpected end of data while reading a comment.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="UnexpectedEndOfLineSeparator" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/UnexpectedEndOfLineSeparator">
+				<Candidate type="String">
+					<Value>Found invalid line or paragraph separator character while reading a comment.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ValueTooLarge" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ValueTooLarge">
+				<Candidate type="String">
+					<Value>The JSON value of length {0} is too large and not supported.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ZeroDepthAtEnd" uri="ms-resource://11715Onionware.11Pass/FxResources.System.Text.Json.SR/ZeroDepthAtEnd">
+				<Candidate type="String">
+					<Value>Expected depth to be zero at the end of the JSON payload. There is an open JSON object or array that should be closed.</Value>
+				</Candidate>
+			</NamedResource>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="Microsoft.Xaml.Interactions">
+			<ResourceMapSubtree name="Strings">
+				<NamedResource name="CallMethodActionValidMethodNotFoundExceptionMessage" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactions/Strings/CallMethodActionValidMethodNotFoundExceptionMessage">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Cannot find method named {0} on object of type {1} that matches the expected signature.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CannotAttachBehaviorMultipleTimesExceptionMessage" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactions/Strings/CannotAttachBehaviorMultipleTimesExceptionMessage">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>An instance of a behavior cannot be attached to more than one object at a time.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="CannotFindEventNameExceptionMessage" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactions/Strings/CannotFindEventNameExceptionMessage">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Cannot find an event named {0} on type {1}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ChangePropertyActionCannotFindPropertyNameExceptionMessage" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactions/Strings/ChangePropertyActionCannotFindPropertyNameExceptionMessage">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Cannot find a property named {0} on type {1}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ChangePropertyActionCannotSetValueExceptionMessage" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactions/Strings/ChangePropertyActionCannotSetValueExceptionMessage">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Cannot assign value of type {0} to property {1} of type {2}. The {1} property can be assigned only values of type {2}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="ChangePropertyActionPropertyIsReadOnlyExceptionMessage" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactions/Strings/ChangePropertyActionPropertyIsReadOnlyExceptionMessage">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Property {0} defined by type {1} does not expose a set method and therefore cannot be modified.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="EventNotSupportedExceptionMessage" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactions/Strings/EventNotSupportedExceptionMessage">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Event {0} is not supported. Consider implementing a custom IBehavior to respond to this event.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="GoToStateActionTargetHasNoStateGroups" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactions/Strings/GoToStateActionTargetHasNoStateGroups">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Target {0} does not define any VisualStateGroups.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InvalidLeftOperand" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactions/Strings/InvalidLeftOperand">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Binding property of type {0} cannot be used with operator {1}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InvalidOperands" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactions/Strings/InvalidOperands">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Binding property of type {0} and Value property of type {1} cannot be used with operator {2}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InvalidRightOperand" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactions/Strings/InvalidRightOperand">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Value property of type {0} cannot be used with operator {1}.</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="Microsoft.Xaml.Interactivity">
+			<ResourceMapSubtree name="Strings">
+				<NamedResource name="CannotAttachBehaviorMultipleTimesExceptionMessage" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactivity/Strings/CannotAttachBehaviorMultipleTimesExceptionMessage">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>An instance of a behavior cannot be attached to more than one object at a time.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="DuplicateBehaviorInCollectionExceptionMessage" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactivity/Strings/DuplicateBehaviorInCollectionExceptionMessage">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Cannot add an instance of a behavior to a BehaviorCollection more than once.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="InvalidAssociatedObjectExceptionMessage" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactivity/Strings/InvalidAssociatedObjectExceptionMessage">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>AssociatedObject is of type {0} but should be of type {1}.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="NonActionAddedToActionCollectionExceptionMessage" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactivity/Strings/NonActionAddedToActionCollectionExceptionMessage">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Only IAction types are supported in an ActionCollection.</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="NonBehaviorAddedToBehaviorCollectionExceptionMessage" uri="ms-resource://11715Onionware.11Pass/Microsoft.Xaml.Interactivity/Strings/NonBehaviorAddedToBehaviorCollectionExceptionMessage">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Only IBehavior types are supported in a BehaviorCollection.</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="Resources">
+			<NamedResource name="AppDescription" uri="ms-resource://11715Onionware.11Pass/Resources/AppDescription">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>A simple password manager for Windows 10 and Windows 11.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="AppDisplayName" uri="ms-resource://11715Onionware.11Pass/Resources/AppDisplayName">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Onionware Password Manager</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="databases" uri="ms-resource://11715Onionware.11Pass/Resources/databases">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Password databases</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="OpvName" uri="ms-resource://11715Onionware.11Pass/Resources/OpvName">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Onionware Passwordvault</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="zipArchive" uri="ms-resource://11715Onionware.11Pass/Resources/zipArchive">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>ZIP archive</Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="Settings_About">
+				<NamedResource name="Text" uri="ms-resource://11715Onionware.11Pass/Resources/Settings_About/Text">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>About this application</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Settings_AboutDescription">
+				<NamedResource name="Text" uri="ms-resource://11715Onionware.11Pass/Resources/Settings_AboutDescription/Text">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Settings page placeholder text.  Your app description goes here.</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Settings_Personalization">
+				<NamedResource name="Text" uri="ms-resource://11715Onionware.11Pass/Resources/Settings_Personalization/Text">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Personalization</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Settings_PrivacyTermsLink">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/Resources/Settings_PrivacyTermsLink/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Privacy Statement</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="NavigateUri" uri="ms-resource://11715Onionware.11Pass/Resources/Settings_PrivacyTermsLink/NavigateUri">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>https://YourPrivacyUrlGoesHere/</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Settings_Theme">
+				<NamedResource name="Text" uri="ms-resource://11715Onionware.11Pass/Resources/Settings_Theme/Text">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Choose Theme</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Settings_Theme_Dark">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/Resources/Settings_Theme_Dark/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Dark</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Settings_Theme_Default">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/Resources/Settings_Theme_Default/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Windows default</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Settings_Theme_Light">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/Resources/Settings_Theme_Light/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Light</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Shell_Database">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/Resources/Shell_Database/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Password databases</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Shell_Generation">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/Resources/Shell_Generation/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Generation</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="UIResources">
+			<ResourceMapSubtree name="Amount">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/UIResources/Amount/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Amount:</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="ClearBtn">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/UIResources/ClearBtn/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Clear output</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="CopyBtn">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/UIResources/CopyBtn/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Copy</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="copySymbolBtn">
+				<ResourceMapSubtree name="ToolTipService">
+					<NamedResource name="ToolTip" uri="ms-resource://11715Onionware.11Pass/UIResources/copySymbolBtn/ToolTipService/ToolTip">
+						<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+							<Value>Copy</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="databases">
+				<NamedResource name="Text" uri="ms-resource://11715Onionware.11Pass/UIResources/databases/Text">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Databases</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="decryptBtn">
+				<ResourceMapSubtree name="ToolTipService">
+					<NamedResource name="ToolTip" uri="ms-resource://11715Onionware.11Pass/UIResources/decryptBtn/ToolTipService/ToolTip">
+						<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+							<Value>Decrypt</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="deleteBtn">
+				<ResourceMapSubtree name="ToolTipService">
+					<NamedResource name="ToolTip" uri="ms-resource://11715Onionware.11Pass/UIResources/deleteBtn/ToolTipService/ToolTip">
+						<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+							<Value>Delete</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="editBtn">
+				<ResourceMapSubtree name="ToolTipService">
+					<NamedResource name="ToolTip" uri="ms-resource://11715Onionware.11Pass/UIResources/editBtn/ToolTipService/ToolTip">
+						<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+							<Value>Edit informations</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="exportDatabase">
+				<ResourceMapSubtree name="ToolTipService">
+					<NamedResource name="ToolTip" uri="ms-resource://11715Onionware.11Pass/UIResources/exportDatabase/ToolTipService/ToolTip">
+						<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+							<Value>Export database</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="exportDatabases">
+				<ResourceMapSubtree name="ToolTipService">
+					<NamedResource name="ToolTip" uri="ms-resource://11715Onionware.11Pass/UIResources/exportDatabases/ToolTipService/ToolTip">
+						<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+							<Value>Export all databases</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="GenerateBtn">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/UIResources/GenerateBtn/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Generate</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Header">
+				<NamedResource name="Text" uri="ms-resource://11715Onionware.11Pass/UIResources/Header/Text">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Password Generator</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="info">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/UIResources/info/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Info</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/UIResources/info/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Infos about the selected item.</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="infosChangedBar">
+				<NamedResource name="Title" uri="ms-resource://11715Onionware.11Pass/UIResources/infosChangedBar/Title">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Informations have been changed!</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="LowerCase">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/UIResources/LowerCase/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Lowercase letters</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="name">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/UIResources/name/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Name</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/UIResources/name/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Name of the selected item.</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="newDatabaseBtn">
+				<ResourceMapSubtree name="ToolTipService">
+					<NamedResource name="ToolTip" uri="ms-resource://11715Onionware.11Pass/UIResources/newDatabaseBtn/ToolTipService/ToolTip">
+						<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+							<Value>New Database</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="newPasswordBtn">
+				<ResourceMapSubtree name="ToolTipService">
+					<NamedResource name="ToolTip" uri="ms-resource://11715Onionware.11Pass/UIResources/newPasswordBtn/ToolTipService/ToolTip">
+						<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+							<Value>New Password</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Numbers">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/UIResources/Numbers/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Numbers</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Output">
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/UIResources/Output/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Choose the amount of passwords and click Generate!</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="password">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/UIResources/password/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Password</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="PlaceholderText" uri="ms-resource://11715Onionware.11Pass/UIResources/password/PlaceholderText">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Decrypt a database to see its passwords.</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="PasswordLenght">
+				<NamedResource name="Header" uri="ms-resource://11715Onionware.11Pass/UIResources/PasswordLenght/Header">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Length of password:</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="PasswordProperties">
+				<NamedResource name="Text" uri="ms-resource://11715Onionware.11Pass/UIResources/PasswordProperties/Text">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Password properties:</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="saveBtn">
+				<ResourceMapSubtree name="ToolTipService">
+					<NamedResource name="ToolTip" uri="ms-resource://11715Onionware.11Pass/UIResources/saveBtn/ToolTipService/ToolTip">
+						<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+							<Value>Save changes</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="savedPasswords">
+				<NamedResource name="Text" uri="ms-resource://11715Onionware.11Pass/UIResources/savedPasswords/Text">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Saved passwords</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="showBtn">
+				<ResourceMapSubtree name="ToolTipService">
+					<NamedResource name="ToolTip" uri="ms-resource://11715Onionware.11Pass/UIResources/showBtn/ToolTipService/ToolTip">
+						<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+							<Value>Show password</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Subheader">
+				<NamedResource name="Text" uri="ms-resource://11715Onionware.11Pass/UIResources/Subheader/Text">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Generate a new password!</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Symbols">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/UIResources/Symbols/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Symbols</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="UpperCase">
+				<NamedResource name="Content" uri="ms-resource://11715Onionware.11Pass/UIResources/UpperCase/Content">
+					<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+						<Value>Uppercase letters</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

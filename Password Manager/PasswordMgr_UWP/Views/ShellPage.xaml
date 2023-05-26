@@ -10,6 +10,8 @@
     xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d"
+    MinWidth="1120"
+    MinHeight="582"
     Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
     <i:Interaction.Behaviors>
@@ -42,8 +44,8 @@
                 <ic:InvokeCommandAction Command="{x:Bind ViewModel.ItemInvokedCommand}" />
             </ic:EventTriggerBehavior>
         </i:Interaction.Behaviors>
-        
+
         <Frame x:Name="shellFrame"/>
-        
+
     </winui:NavigationView>
 </Page>

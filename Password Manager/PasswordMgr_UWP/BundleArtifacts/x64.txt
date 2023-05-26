@@ -1,0 +1,2 @@
+MainPackage=C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x64\Debug\PasswordMgr_UWP_1.2.1.0_x64_Debug.msix
+SymbolPackage=C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\obj\x64\Debug\Symbols\PasswordMgr_UWP_1.2.1.0_x64_Debug.appxsym

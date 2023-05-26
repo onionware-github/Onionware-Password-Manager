@@ -1,0 +1,7 @@
+MainPackage=C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\ARM\Debug\PasswordMgr_UWP_1.2.1.0_ARM_Debug.msix
+SymbolPackage=C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\obj\ARM\Debug\Symbols\PasswordMgr_UWP_1.2.1.0_ARM_Debug.appxsym
+ResourcePack=C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\ARM\Debug\PasswordMgr_UWP_1.2.1.0_language-de.msix
+ResourcePack=C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\ARM\Debug\PasswordMgr_UWP_1.2.1.0_scale-100.msix
+ResourcePack=C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\ARM\Debug\PasswordMgr_UWP_1.2.1.0_scale-125.msix
+ResourcePack=C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\ARM\Debug\PasswordMgr_UWP_1.2.1.0_scale-150.msix
+ResourcePack=C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\ARM\Debug\PasswordMgr_UWP_1.2.1.0_scale-400.msix

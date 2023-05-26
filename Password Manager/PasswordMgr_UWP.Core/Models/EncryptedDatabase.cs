@@ -66,6 +66,10 @@ namespace PasswordMgr_UWP.Core.Models
             PlaintextPassword = null;
         }
 
+        public async Task EncryptAsync()
+        {
+            Encrypt();
+        }
         /// <summary>
         /// Decrypts the database.
         /// </summary>
