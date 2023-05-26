@@ -1,6 +1,0 @@
-﻿[ResourceMetadata]
-"ResourceId"			"split.language-ru"
-"ResourceDimensions"		"language-ru-ru"
-
-[Files]
-"C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\obj\x86\Debug\split.language-ru.pri"			"resources.pri"
