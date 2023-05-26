@@ -93,6 +93,7 @@
                         <Setter Target="dataSpace.(Grid.RowSpan)" Value="1"/>
 
                         <Setter Target="dataSpace.Margin" Value="5"/>
+                        <Setter Target="treeSpace.Margin" Value="0"/>
 
                         <Setter Target="dataSpace.VerticalAlignment" Value="Bottom"/>
                     </VisualState.Setters>
@@ -123,67 +124,71 @@
                           CanReorderItems="False">
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="ItemInvoked">
-                            <core:InvokeCommandAction x:ConnectionId='33'                                                 InputConverter="{StaticResource TreeViewItemInvokedEventArgsToInvokedItemConverter}"/>
+                            <core:InvokeCommandAction x:ConnectionId='33'                                                
+                                                      InputConverter="{StaticResource TreeViewItemInvokedEventArgsToInvokedItemConverter}" />
                         </core:EventTriggerBehavior>
                         <core:EventTriggerBehavior EventName="DoubleTapped">
-                            <core:InvokeCommandAction x:ConnectionId='32'                                                    />
+                            <core:InvokeCommandAction x:ConnectionId='32'                                                     />
                         </core:EventTriggerBehavior>
                     </interactivity:Interaction.Behaviors>
                 </TreeView>
             </ScrollViewer>
 
             <Frame Grid.RowSpan="2" Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}">
-                <StackPanel Orientation="Vertical"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Bottom"
-                            Spacing="5"
-                            Margin="10">
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Spacing="5"
+                                Margin="10">
 
-                    <Button x:ConnectionId='24' Style="{ThemeResource AccentButtonStyle}"
-                                                                           
-                            x:Uid="/UIResources/newDatabaseBtn">
-                        <SymbolIcon Symbol="Add"/>
-                    </Button>
-
-                    <Button x:ConnectionId='25' x:Name="key" Style="{ThemeResource AccentButtonStyle}"
-                                                                           
-                                                                                                                                                       
-                            x:Uid="/UIResources/newPasswordBtn">
-                        <SymbolIcon Symbol="Permissions"/>
-                    </Button>
-
-                    <Button x:ConnectionId='26' Style="{ThemeResource AccentButtonStyle}"
+                        <Button x:ConnectionId='24' Style="{ThemeResource AccentButtonStyle}"
                                                                                
-                                                                                                               
-                            x:Uid="/UIResources/decryptBtn">
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE785;"/>
-                    </Button>
+                                x:Uid="/UIResources/newDatabaseBtn">
+                            <SymbolIcon Symbol="Add" />
+                        </Button>
 
-                    <Button x:ConnectionId='27' Style="{ThemeResource AccentButtonStyle}"
+                        <Button x:ConnectionId='25' x:Name="key" Style="{ThemeResource AccentButtonStyle}"
+                                                                               
+                                                                                                                                                           
+                                x:Uid="/UIResources/newPasswordBtn">
+                            <SymbolIcon Symbol="Permissions" />
+                        </Button>
+
+                        <Button x:ConnectionId='26' Style="{ThemeResource AccentButtonStyle}"
+                                                                                   
+                                                                                                                   
+                                x:Uid="/UIResources/decryptBtn">
+                            <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE785;" />
+                        </Button>
+
+                        <Button x:ConnectionId='27' Style="{ThemeResource AccentButtonStyle}"
+                                                                                 
+                                                                  
+                                x:Uid="/UIResources/encryptBtn">
+                            <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE72E;" />
+                        </Button>
+
+                        <Button x:ConnectionId='28'                                           
+                                                                                                                          
+                                x:Uid="/UIResources/deleteBtn">
+                            <SymbolIcon Symbol="Delete" />
+                        </Button>
+
+                        <Button x:ConnectionId='29'                                                   
+                                                                                 
+                                x:Uid="/UIResources/exportDatabase">
+                            <SymbolIcon Symbol="SaveLocal" />
+                        </Button>
+
+                        <Button x:ConnectionId='30'                                                       
                                                                              
-                                                              
-                            x:Uid="/UIResources/encryptBtn">
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE72E;"/>
-                    </Button>
+                                x:Uid="/UIResources/exportDatabases">
+                            <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xEA35;" />
+                        </Button>
+                    </StackPanel>
+                </ScrollViewer>
 
-                    <Button x:ConnectionId='28'                                           
-                                                                                                                      
-                            x:Uid="/UIResources/deleteBtn">
-                        <SymbolIcon Symbol="Delete"/>
-                    </Button>
-
-                    <Button x:ConnectionId='29'                                                   
-                                                                             
-                            x:Uid="/UIResources/exportDatabase">
-                        <SymbolIcon Symbol="SaveLocal"/>
-                    </Button>
-
-                    <Button x:ConnectionId='30'                                                       
-                                                                         
-                            x:Uid="/UIResources/exportDatabases">
-                        <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xEA35;"/>
-                    </Button>
-                </StackPanel>
             </Frame>
         </Grid>
 

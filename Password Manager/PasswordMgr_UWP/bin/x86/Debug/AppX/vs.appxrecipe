@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-05-26T13:07:17.295</Modified>
+      <Modified>2023-05-26T13:27:26.855</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\PasswordMgr_UWP.exe">
       <PackagePath>entrypoint\PasswordMgr_UWP.exe</PackagePath>
-      <Modified>2023-05-26T13:07:15.738</Modified>
+      <Modified>2023-05-26T13:27:25.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\loren\.nuget\packages\microsoft.bcl.asyncinterfaces\5.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
       <PackagePath>Microsoft.Bcl.AsyncInterfaces.dll</PackagePath>
@@ -365,63 +365,63 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\PasswordMgr_UWP.xr.xml">
       <PackagePath>PasswordMgr_UWP.xr.xml</PackagePath>
-      <Modified>2023-05-26T13:07:15.370</Modified>
+      <Modified>2023-05-26T13:20:07.232</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.419</Modified>
+      <Modified>2023-05-26T13:27:24.947</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Dialogs\DatabaseDialog.xbf">
       <PackagePath>Dialogs\DatabaseDialog.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.419</Modified>
+      <Modified>2023-05-26T13:27:24.947</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Dialogs\DeleteDialog.xbf">
       <PackagePath>Dialogs\DeleteDialog.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.419</Modified>
+      <Modified>2023-05-26T13:27:24.948</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Dialogs\MasterPasswordDialog.xbf">
       <PackagePath>Dialogs\MasterPasswordDialog.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.419</Modified>
+      <Modified>2023-05-26T13:27:24.948</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Dialogs\PasswordDialog.xbf">
       <PackagePath>Dialogs\PasswordDialog.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.419</Modified>
+      <Modified>2023-05-26T13:27:24.948</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Styles\Page.xbf">
       <PackagePath>Styles\Page.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.418</Modified>
+      <Modified>2023-05-26T13:27:24.945</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Styles\_Colors.xbf">
       <PackagePath>Styles\_Colors.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.418</Modified>
+      <Modified>2023-05-26T13:27:24.946</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Styles\_FontSizes.xbf">
       <PackagePath>Styles\_FontSizes.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.418</Modified>
+      <Modified>2023-05-26T13:27:24.947</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Styles\_Thickness.xbf">
       <PackagePath>Styles\_Thickness.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.418</Modified>
+      <Modified>2023-05-26T13:27:24.947</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Styles\TextBlock.xbf">
       <PackagePath>Styles\TextBlock.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.418</Modified>
+      <Modified>2023-05-26T13:27:24.947</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Views\DatabasePage.xbf">
       <PackagePath>Views\DatabasePage.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.412</Modified>
+      <Modified>2023-05-26T13:27:24.940</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Views\GenerationPage.xbf">
       <PackagePath>Views\GenerationPage.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.419</Modified>
+      <Modified>2023-05-26T13:27:24.948</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Views\SettingsPage.xbf">
       <PackagePath>Views\SettingsPage.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.420</Modified>
+      <Modified>2023-05-26T13:27:24.948</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Views\ShellPage.xbf">
       <PackagePath>Views\ShellPage.xbf</PackagePath>
-      <Modified>2023-05-26T13:07:15.420</Modified>
+      <Modified>2023-05-26T13:27:24.949</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -437,7 +437,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\Onionware-Password-Manager\Password Manager\PasswordMgr_UWP\bin\x86\Debug\Core\PasswordMgr_UWP.exe">
       <PackagePath>PasswordMgr_UWP.exe</PackagePath>
-      <Modified>2023-05-26T13:07:17.287</Modified>
+      <Modified>2023-05-26T13:27:26.848</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\loren\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\lib\uap10.0\Microsoft.UI.Xaml.winmd">
       <PackagePath>Microsoft.UI.Xaml.winmd</PackagePath>

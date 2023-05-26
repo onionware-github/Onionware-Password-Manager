@@ -10,8 +10,6 @@
     xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d"
-    MinWidth="1120"
-    MinHeight="582"
     Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
     <i:Interaction.Behaviors>
