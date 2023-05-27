@@ -31,6 +31,7 @@ namespace PasswordMgr_UWP.ViewModels
             NewDatabaseCommand = new AsyncRelayCommand(() => ShowDatabaseDialogAsync());
             NewPasswordCommand = new AsyncRelayCommand(() => ShowPasswordDialogAsync());
             DecryptDatabaseCommand = new AsyncRelayCommand(() => ShowMasterPasswordDialog());
+            EncryptButtonCommand = new AsyncRelayCommand(() => EncryptDatabase());
             DeleteCommand = new AsyncRelayCommand(async () =>
             {
                 //Shows a ContentDialog to prevent an unintended delete
@@ -87,6 +88,7 @@ namespace PasswordMgr_UWP.ViewModels
         public AsyncRelayCommand DecryptDatabaseCommand { get; }
         public AsyncRelayCommand DeleteCommand { get; }
         public AsyncRelayCommand SaveCommand { get; }
+        public AsyncRelayCommand EncryptButtonCommand { get; }
         public AsyncRelayCommand ExportDatabaseCommand { get; }
         public AsyncRelayCommand ExportAllDatabasesCommand { get; }
         public RelayCommand<object> SetSelectedCommand { get; }
@@ -489,7 +491,7 @@ namespace PasswordMgr_UWP.ViewModels
             Databases.Add(encryptedDatabase);
         }
 
-        
+
         /// <summary>
         /// Updates the .bson file for an existing database.
         /// </summary>
@@ -548,6 +550,11 @@ namespace PasswordMgr_UWP.ViewModels
                 };
                 await errorDlg.ShowAsync();
             }
+        }
+
+        public async Task EncryptDatabase()
+        {
+            await ((EncryptedDatabase) selected).EncryptAsync();
         }
 
         /// <summary>

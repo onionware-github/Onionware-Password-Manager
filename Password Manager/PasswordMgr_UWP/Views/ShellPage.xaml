@@ -42,8 +42,8 @@
                 <ic:InvokeCommandAction Command="{x:Bind ViewModel.ItemInvokedCommand}" />
             </ic:EventTriggerBehavior>
         </i:Interaction.Behaviors>
-        
+
         <Frame x:Name="shellFrame"/>
-        
+
     </winui:NavigationView>
 </Page>

@@ -1,6 +1,10 @@
-﻿using PasswordMgr_UWP.ViewModels;
+﻿using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
+using PasswordMgr_UWP.ViewModels;
 using Windows.ApplicationModel.Core;
 using Windows.UI;
+using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
