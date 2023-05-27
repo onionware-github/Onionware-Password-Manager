@@ -9,7 +9,7 @@
 
   <Identity
     Name="11715Onionware.11Pass"
-    Publisher="CN=lorenz"
+    Publisher="CN=OnionWare"
     Version="1.2.1.0" />
 
   <mp:PhoneIdentity PhoneProductId="fb9938a3-e999-4167-ad8e-92bbd780b29c" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
